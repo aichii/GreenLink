@@ -1,0 +1,9 @@
+.navbar {
+  background-color: lightblue;
+  display: flex;
+  justify-content: right;
+}
+
+.user-account {
+  margin-left: auto;
+}
