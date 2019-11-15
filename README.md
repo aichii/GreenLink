@@ -6,7 +6,16 @@ This example wireframe lives in `readme_assets/wireframe_example.jpg`
 
 Swap it out with your actual wireframes...
 
-![Wireframe Example](readme_assets/wireframe_example.jpg)
+![Wireframe](readme_assets/Home.jpg)
+![Wireframe](readme_assets/About_us.jpg)
+![Wireframe](readme_assets/Activate_Account.jpg)
+![Wireframe](readme_assets/Sign_In.jpg)
+![Wireframe](readme_assets/My_Dashboard.jpg)
+![Wireframe](readme_assets/Profile.jpg)
+![Wireframe](readme_assets/My_Network.jpg)
+![Wireframe](readme_assets/Rank.jpg)
+![Wireframe](readme_assets/Challenges.jpg)
+![Wireframe](readme_assets/Tips.jpg)
 
 ## TODO: Submit your ERD in the form of a pull request
 
