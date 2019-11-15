@@ -12,7 +12,7 @@ Swap it out with your actual wireframes...
 
 This example Entity Relational Diagram lives in `readme_assets/erd_example.png`
 
-readme_assets/GreenLink_DB_ERD.png
+![ERD](readme_assets/GreenLink_DB_ERD.png)
 
 Swap it out with your actual ERD...
 
