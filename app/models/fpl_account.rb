@@ -1,5 +1,6 @@
 class FplAccount < ApplicationRecord
-  include Encryptable
+  belongs_to :user
 
+  include Encryptable
   attr_encrypted :username, :password
 end
