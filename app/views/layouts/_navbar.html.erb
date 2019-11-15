@@ -10,10 +10,9 @@
         <% end %>
         <div>
           <%= link_to "Account", edit_user_registration_url, class: "dropdown-item" %>
-          <div class="dropdown-divider"></div>
+          <div>
           <%= link_to "Sign Out", destroy_user_session_url,
-              method: :delete,
-              class: "dropdown-item" %>
+              method: :delete, %>
         </div>
       </li>
     </ul>
