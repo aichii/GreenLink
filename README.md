@@ -1,10 +1,6 @@
-# Final Project: Before You Can Start!
+# Final Project: 
 
-## TODO: Submit your wireframes in the form of a pull request
-
-This example wireframe lives in `readme_assets/wireframe_example.jpg`
-
-Swap it out with your actual wireframes...
+## Wireframes
 
 ![Wireframe](readme_assets/Home.jpg)
 ![Wireframe](readme_assets/About_us.jpg)
@@ -17,10 +13,7 @@ Swap it out with your actual wireframes...
 ![Wireframe](readme_assets/Challenges.jpg)
 ![Wireframe](readme_assets/Tips.jpg)
 
-## TODO: Submit your ERD in the form of a pull request
-
-This example Entity Relational Diagram lives in `readme_assets/erd_example.png`
-
+## ERD
 ![ERD](readme_assets/GreenLink_DB_ERD.png)
 
 Swap it out with your actual ERD...
