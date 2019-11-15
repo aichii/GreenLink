@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <%= link_to "Dashboard", root_url, class: "navbar-logo" %>
+  <div class="user-account">
+    <ul>
+      <li>
+        <% if user_signed_in? %>
+          <a href="#">
+            <%= current_user.email %>
+          </a>
+        <% end %>
+        <div>
+          <%= link_to "Account", edit_user_registration_url, class: "dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Sign Out", destroy_user_session_url,
+              method: :delete,
+              class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
