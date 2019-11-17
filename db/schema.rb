@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fpl_account_id"], name: "index_bills_on_fpl_account_id"
+  end
+  
   create_table "challenges", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -40,6 +42,14 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_fpl_accounts_on_user_id"
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
