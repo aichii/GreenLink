@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_11_19_201322) do
+=======
+ActiveRecord::Schema.define(version: 2019_11_17_044134) do
+>>>>>>> create ChallengeTip table
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "bills", force: :cascade do |t|
     t.date "start_date", null: false
     t.date "end_date", null: false
@@ -26,6 +31,17 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
     t.index ["fpl_account_id"], name: "index_bills_on_fpl_account_id"
   end
   
+=======
+  create_table "challenge_tips", force: :cascade do |t|
+    t.bigint "challenge_id", null: false
+    t.bigint "tip_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["challenge_id"], name: "index_challenge_tips_on_challenge_id"
+    t.index ["tip_id"], name: "index_challenge_tips_on_tip_id"
+  end
+
+>>>>>>> create ChallengeTip table
   create_table "challenges", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -64,6 +80,11 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key "bills", "fpl_accounts"
+=======
+  add_foreign_key "challenge_tips", "challenges"
+  add_foreign_key "challenge_tips", "tips"
+>>>>>>> create ChallengeTip table
   add_foreign_key "fpl_accounts", "users"
 end
