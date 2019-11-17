@@ -1,6 +1,7 @@
 <nav class="navbar">
   <% if user_signed_in? %>
     <%= link_to "Dashboard", root_url, class: "navbar-logo" %>
+    <%= link_to "Challenges", challenges_url %>
     <div class="user-account">
       <ul>
         <li><%= current_user.email %></li>
