@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fpl_account_id"], name: "index_bills_on_fpl_account_id"
+  create_table "challenges", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "points"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "fpl_accounts", force: :cascade do |t|

@@ -3,10 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '>= 2.6.0'
 
-<<<<<<< HEAD
 gem 'watir'
-=======
->>>>>>> add hirb gem
 gem 'hirb'
 gem 'devise'
 gem 'react_on_rails'
