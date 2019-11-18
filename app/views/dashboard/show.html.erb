@@ -3,11 +3,11 @@
   <%= form_with url: fpl_accounts_url do |f| %>
     <p>
       <%= f.label :username %>
-      <%= f.text_field :username, autocomplete: "off" %>
+      <%= f.email_field :username, autocomplete: "off" %>
     </p>
     <p>
       <%= f.label :password %>
-      <%= f.text_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off" %>
     </p>
     <p>
       <%= f.submit "add FPL Account" %>
