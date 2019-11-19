@@ -25,6 +25,23 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fpl_account_id"], name: "index_bills_on_fpl_account_id"
   end
+  
+  create_table "challenge_tips", force: :cascade do |t|
+    t.bigint "challenge_id", null: false
+    t.bigint "tip_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["challenge_id"], name: "index_challenge_tips_on_challenge_id"
+    t.index ["tip_id"], name: "index_challenge_tips_on_tip_id"
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "points"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "fpl_accounts", force: :cascade do |t|
     t.string "encrypted_username", null: false
@@ -34,6 +51,14 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_fpl_accounts_on_user_id"
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,5 +74,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
   end
 
   add_foreign_key "bills", "fpl_accounts"
+  add_foreign_key "challenge_tips", "challenges"
+  add_foreign_key "challenge_tips", "tips"
   add_foreign_key "fpl_accounts", "users"
 end
