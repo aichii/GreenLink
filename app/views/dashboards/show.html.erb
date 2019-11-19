@@ -1,1 +1,27 @@
-<h1>Welcome to the dashboard</h1>
+<h1>Welcome, <%= current_user.email %></h1>
+
+<% if current_user.fpl_account %>
+  <%= button_to "Delete Account",
+      fpl_account_url, method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% else %>
+  <h1>Connect your FPL Account</h1>
+  <%= form_with url: fpl_account_url do |f| %>
+    <p>
+      <%= f.label :username %>
+      <%= f.email_field :username, autocomplete: "off" %>
+    </p>
+    <p>
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "off" %>
+    </p>
+    <p>
+      <%= f.submit "Add FPL Account" %>
+    </p>
+  <% end %>
+<% end %>
+
+
+
+
+
