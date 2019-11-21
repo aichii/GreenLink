@@ -1,0 +1,29 @@
+.landing-navbar {
+  background-color: #5EBF4D;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#landing-main {
+  height: calc(80vh - 100px);
+  background-color: lightgreen;
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 90px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+}
