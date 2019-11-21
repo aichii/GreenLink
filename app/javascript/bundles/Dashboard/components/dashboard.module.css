@@ -1,0 +1,43 @@
+.mainChartContainer {
+    width: 80%;
+    height: auto;
+    margin: 10px 15px 10px 0;
+    box-shadow: 1px 1px 20px 1px rgba(000, 000, 000, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.mainChartContainer h2 {
+    margin: 20px 45px;
+}
+
+.containerDashboard {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: flex-end;
+}
+
+.containerSecondaryDashboard {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+}
+
+.secondaryChartContainer {
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 20px 1px rgba(000, 000, 000, 0.2);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.wrapperSecondaryChart {
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+    height: auto;
+    margin: 25px;
+}
+
