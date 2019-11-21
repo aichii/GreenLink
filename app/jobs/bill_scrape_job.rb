@@ -18,6 +18,8 @@ class BillScrapeJob < ApplicationJob
         amount_cents:   (bill_amount.to_f * 100).to_i
       )
     end
+    Sync.create(fpl_account: fpl_account)
+    BillScrapeChannel.broadcast_to(fpl_account.user, { refetch_bills: true })
   end
 
 end

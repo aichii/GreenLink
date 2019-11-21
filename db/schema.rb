@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_201322) do
+ActiveRecord::Schema.define(version: 2019_11_21_214715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
     t.index ["user_id"], name: "index_fpl_accounts_on_user_id"
   end
 
+  create_table "syncs", force: :cascade do |t|
+    t.bigint "fpl_account_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fpl_account_id"], name: "index_syncs_on_fpl_account_id"
+  end
+
   create_table "tips", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -77,4 +84,5 @@ ActiveRecord::Schema.define(version: 2019_11_19_201322) do
   add_foreign_key "challenge_tips", "challenges"
   add_foreign_key "challenge_tips", "tips"
   add_foreign_key "fpl_accounts", "users"
+  add_foreign_key "syncs", "fpl_accounts"
 end

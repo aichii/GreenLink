@@ -8,6 +8,7 @@ export default class Dashboard extends Component {
         super(props)
         window.dashboardCharts = this
         this.state = {
+            loading: true,
             data: {
                 labels: [],
                 datasets: [{
@@ -67,6 +68,8 @@ export default class Dashboard extends Component {
         }
     }
 
+    load = () => this.setState({loading: true})
+
     bill = () => {
         axios.get(`/bills.json`)
         .then(res => { 
@@ -93,6 +96,7 @@ export default class Dashboard extends Component {
             }
 
             this.setState({
+                loading: false,
                 data: {
                     labels: endDate, 
                     datasets: [
@@ -144,6 +148,7 @@ export default class Dashboard extends Component {
     datasetKeyProvider () {return Math.random (); } 
 
   render(){
+    if (this.state.loading) return <h1>Loading...</h1>
     return(
         <>
         <div className={style.containerDashboard}>

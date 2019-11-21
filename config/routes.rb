@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root 'landing#show'
   resource :dashboard, only: [:show]
-  resource :fpl_account, only: [:create, :destroy]
+  resource :fpl_account, only: [:create, :destroy] do
+    resource :sync, only: [:create]
+  end
   resources :challenges, only: [:index]
   resources :tips, only: [:index]
   resources :bills, only: [:index]
