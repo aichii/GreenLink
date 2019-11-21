@@ -1,18 +1,14 @@
 class BillsController < ApplicationController
-
-    def index
-        respond_to do |format|
-          format.html{render :index}
-          format.json do
-            bills = Bill.all
-            if bills.present?
-                results = bills
-            else
-              results = []
-            end
-            render json: results
-          end
+  def index
+    respond_to do |format|
+      format.json do
+        if current_user.fpl_account
+          bills = current_user.fpl_account.bills
+        else
+          bills = []
         end
+        render json: bills
+      end
     end
-    
+  end
 end

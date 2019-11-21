@@ -4,62 +4,66 @@ import { Line, Doughnut } from 'react-chartjs-2'
 import style from './dashboard.module.css'
 
 export default class Dashboard extends Component {
-    state = { 
-        data: {
-            labels: [],
-            datasets: [{
-                    label: "",
-                    backgroundColor: "",
-                    data: []
-                },
-                {
-                    label: "",
-                    backgroundColor: "",
-                    data: []
-                }
-            ]
-        },
-        dataAmount: {
-            labels: [],
-            datasets: [{
-                data: [],
-                backgroundColor: [
-                    '#FF6384',
-                    '#36A2EB'
-                    ],
-                    hoverBackgroundColor: [
-                    '#FF6384',
-                    '#36A2EB'
-                    ]
-            }]
-        },
-        dataKwh: {
-            labels: [],
-            datasets: [{
-                data: [],
-                backgroundColor: [
-                    '#36A2EB',
-                    '#FFCE56'
-                    ],
-                    hoverBackgroundColor: [
-                    '#36A2EB',
-                    '#FFCE56'
-                    ]
-            }]
-        },
-        dataDanger: {
-            labels: [],
-            datasets: [{
-                data: [],
-                backgroundColor: [
-                    '#FF6384',
-                    '#FFCE56'
-                    ],
-                    hoverBackgroundColor: [
-                    '#FF6384',
-                    '#FFCE56'
-                    ]
-            }]
+    constructor(props){
+        super(props)
+        window.dashboardCharts = this
+        this.state = {
+            data: {
+                labels: [],
+                datasets: [{
+                        label: "",
+                        backgroundColor: "",
+                        data: []
+                    },
+                    {
+                        label: "",
+                        backgroundColor: "",
+                        data: []
+                    }
+                ]
+            },
+            dataAmount: {
+                labels: [],
+                datasets: [{
+                    data: [],
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB'
+                        ],
+                        hoverBackgroundColor: [
+                        '#FF6384',
+                        '#36A2EB'
+                        ]
+                }]
+            },
+            dataKwh: {
+                labels: [],
+                datasets: [{
+                    data: [],
+                    backgroundColor: [
+                        '#36A2EB',
+                        '#FFCE56'
+                        ],
+                        hoverBackgroundColor: [
+                        '#36A2EB',
+                        '#FFCE56'
+                        ]
+                }]
+            },
+            dataDanger: {
+                labels: [],
+                datasets: [{
+                    data: [],
+                    backgroundColor: [
+                        '#FF6384',
+                        '#FFCE56'
+                        ],
+                        hoverBackgroundColor: [
+                        '#FF6384',
+                        '#FFCE56'
+                        ]
+                }]
+            }
         }
     }
 
@@ -142,7 +146,7 @@ export default class Dashboard extends Component {
   render(){
     return(
         <>
-        <div className={style.containerDashboard}>    
+        <div className={style.containerDashboard}>
             <div className={style.mainChartContainer}>
                 <h2>HISTORY</h2>
                 <Line
