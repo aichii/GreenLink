@@ -264,3 +264,18 @@ Challenge.create(
                     points: 5, 
                     tips: [t17,t25,t33]
                 )
+
+user = User.create(email: "some@guy.com", password: "password")
+fpl_account = FplAccount.create!(username: "some@guy.com", password: "password", user: user)
+
+10.times do |n|
+  Bill.create(
+    start_date: (n+2).months.ago.to_date,
+    end_date: (n+1).months.ago.to_date,
+    kilowatt_hours: rand(2_000),
+    amount_cents: rand(200_000),
+    fpl_account: fpl_account
+  )
+end
+
+Sync.create(fpl_account: fpl_account)

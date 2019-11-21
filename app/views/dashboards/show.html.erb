@@ -7,6 +7,11 @@
   <%= button_to "Delete Account",
       fpl_account_url, method: :delete,
       data: { confirm: "Are you sure?" } %>
+  <%= button_to "Sync Account",
+      fpl_account_sync_path, method: :post, remote: true %>
+  <% if current_user.fpl_account.syncs.any? %>
+    <p>Last synced <%= time_ago_in_words current_user.fpl_account.syncs.last.created_at %> ago</p>
+  <% end %>
 <% else %>
   <h1>Connect your FPL Account</h1>
   <%= form_with url: fpl_account_url do |f| %>
