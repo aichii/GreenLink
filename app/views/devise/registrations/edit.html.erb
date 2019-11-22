@@ -1,12 +1,36 @@
 <div class="wrapper-page"</div>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <% if current_user.fpl_account %>
+      <%= button_to "Delete FPL Account",
+          fpl_account_url, method: :delete,
+          data: { confirm: "Are you sure?" } %>
+    <% end %>
+
 
 <div class="container-account">
 
-  <div class="new-img-profile"></div>
+
+    <% if current_user.profile %>
+      <%= image_tag current_user.profile.avatar.variant(resize_to_limit: [200, 200]),
+                    style: "border-radius: 100%; object-fit: cover;",
+                    width: 200, height: 200 %>
+    <% else %>
+      <div class="new-img-profile"></div>
+    <% end %>
+
+
+  <%= form_with url: profile_url do |form| %>
+    <%= form.file_field :avatar %>
+    <%= form.submit %>
+  <% end %>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+
+
+
 
   <div class="field-edit field">
     <%= f.label :email %><br />
