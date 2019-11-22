@@ -2,9 +2,6 @@
   <h1>Welcome, <%= current_user.email %></h1>
   <% if current_user.fpl_account %>
     <%= react_component 'Dashboard' %>
-    <%= button_to "Delete Account",
-        fpl_account_url, method: :delete,
-        data: { confirm: "Are you sure?" } %>
     <%= button_to "Sync Account",
         fpl_account_sync_path, method: :post, remote: true %>
     <% if current_user.fpl_account.syncs.any? %>
