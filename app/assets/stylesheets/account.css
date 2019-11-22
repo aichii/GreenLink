@@ -7,12 +7,15 @@
     text-transform: uppercase;
 }
 
+<<<<<<< HEAD
 .edit-user-header {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
+=======
+>>>>>>> a9b4980be88a28711daa9d202baa4f6184dca466
 .field-edit {
     width: 50%;
     height: 70px;
@@ -47,8 +50,12 @@
 .danger-zone {
     margin-top: 30px;
     display: flex;
+<<<<<<< HEAD
     flex-direction: row;
     justify-content: space-evenly;
+=======
+    flex-direction: column;
+>>>>>>> a9b4980be88a28711daa9d202baa4f6184dca466
     width: 50%;
     height: auto;
     align-items: center;
@@ -63,7 +70,10 @@
     background-color: #E04327;
     color: #ffffff;
     text-transform: uppercase;
+<<<<<<< HEAD
     margin-top: 10px;
+=======
+>>>>>>> a9b4980be88a28711daa9d202baa4f6184dca466
 }
 
 .new-img-profile {
@@ -72,4 +82,8 @@
     border-radius: 100%;
     border: 1px solid #000000;
     margin-bottom: 20px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a9b4980be88a28711daa9d202baa4f6184dca466
