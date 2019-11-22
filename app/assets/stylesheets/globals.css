@@ -1,3 +1,7 @@
 body {
   margin: 0;
 }
+
+.wrapper-page {
+  margin-left: 100px;
+}

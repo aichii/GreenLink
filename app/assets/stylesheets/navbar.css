@@ -1,0 +1,83 @@
+.navbar {
+  background: linear-gradient(120deg, rgb(178, 219, 83) 0%, rgb(47, 145, 60) 100%);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 85px;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.container-img { /*user profile picture. might need to use Active Storage to upload picture */
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: black;
+  margin-bottom: 20px;
+  position: relative;
+  top: -35px;
+}
+
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  position: relative;
+  bottom: 40px;
+}
+
+.fas {
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.user-account {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user-profile {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.wrapper-home {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0 8px 0px;
+}
+
+.user-account a, .user-profile a {
+  text-decoration: none;
+}
+
+.wrapper-home:hover {
+  background-color: #ffffff;
+  border-radius:  15px 0px 0px 15px;
+}
+
+.wrapper-home:hover .fas::before {
+ background: linear-gradient(120deg, rgb(178, 219, 83) 0%, rgb(47, 145, 60) 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
+
+.active {
+  background-color: #ffffff;
+  border-radius: 15px 0px 0px 15px ; 
+  -webkit-text-fill-color: rgb(11, 116, 11);
+}
+
