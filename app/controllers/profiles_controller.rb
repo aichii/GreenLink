@@ -3,7 +3,12 @@ class ProfilesController < ApplicationController
   end
   
   def create
-    user = current_user
+    if current_user.profile
+      current_user.profile.update(avatar: params[:avatar])
+    else
+      current_user.create_profile(avatar: params[:avatar])
+    end
+    redirect_back fallback_location: root_url, notice: "Profile successfully updated"
   end
 
   def destroy

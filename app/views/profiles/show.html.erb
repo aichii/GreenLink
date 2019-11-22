@@ -1,8 +1,0 @@
-<%# <% if !current_user.avatar.attached? %> 
-<h1>Upload an image to your account</h1>
-<%= form_with url: profile_url do |f| %>
-  <%= f.label "Profile Photo" %>
-  <%= f.file_field :avatar%><br>  
-  <%= f.submit "Upload Image" %>
-<% end %>
-
