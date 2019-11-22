@@ -27,42 +27,24 @@ export default class Dashboard extends Component {
                 labels: [],
                 datasets: [{
                     data: [],
-                    backgroundColor: [
-                        '#FF6384',
-                        '#36A2EB'
-                        ],
-                        hoverBackgroundColor: [
-                        '#FF6384',
-                        '#36A2EB'
-                        ]
+                    backgroundColor: [],
+                    hoverBackgroundColor: []
                 }]
             },
             dataKwh: {
                 labels: [],
                 datasets: [{
                     data: [],
-                    backgroundColor: [
-                        '#36A2EB',
-                        '#FFCE56'
-                        ],
-                        hoverBackgroundColor: [
-                        '#36A2EB',
-                        '#FFCE56'
-                        ]
+                    backgroundColor: [],
+                    hoverBackgroundColor: []
                 }]
             },
             dataDanger: {
                 labels: [],
                 datasets: [{
                     data: [],
-                    backgroundColor: [
-                        '#FF6384',
-                        '#FFCE56'
-                        ],
-                        hoverBackgroundColor: [
-                        '#FF6384',
-                        '#FFCE56'
-                        ]
+                    backgroundColor: [],
+                    hoverBackgroundColor: []
                 }]
             }
         }
@@ -118,6 +100,14 @@ export default class Dashboard extends Component {
                         ],
                         datasets: [{
                             data: [totalAmounts, amounts[amounts.length -1]],
+                            backgroundColor: [
+                                '#FF6384',
+                                '#36A2EB'
+                            ],
+                            hoverBackgroundColor: [
+                                '#FF6384',
+                                '#36A2EB'
+                            ]
                         }]
                     },
                     dataKwh: {
@@ -127,6 +117,14 @@ export default class Dashboard extends Component {
                         ],
                         datasets: [{
                             data: [totalEnergy, kwh[kwh.length -1]],
+                            backgroundColor: [
+                                '#36A2EB',
+                                '#FFCE56'
+                            ],
+                            hoverBackgroundColor: [
+                                '#36A2EB',
+                                '#FFCE56'
+                            ]
                         }]
                     },
                     dataDanger: {
@@ -135,7 +133,15 @@ export default class Dashboard extends Component {
                             'Conserved Energy Consumption (-1000Kwh x month)'
                         ],
                         datasets: [{
-                            data: [plus, less]
+                            data: [plus, less],
+                            backgroundColor: [
+                                '#FF6384',
+                                '#FFCE56'
+                            ],
+                            hoverBackgroundColor: [
+                                '#FF6384',
+                                '#FFCE56'
+                            ]
                         }]
                     }
             })
@@ -147,7 +153,7 @@ export default class Dashboard extends Component {
 
     datasetKeyProvider () {return Math.random (); } 
 
-  render(){
+    render(){
     if (this.state.loading) return <h1>Loading...</h1>
     return(
         <>
