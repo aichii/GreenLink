@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :sync, only: [:create]
   end
   resource :profile, only: [:create, :destroy]
-  resources :challenges, only: [:index]
+  resources :challenges, only: [:index, :show]
   resources :tips, only: [:index]
   resources :bills, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
