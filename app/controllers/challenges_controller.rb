@@ -11,7 +11,7 @@ class ChallengesController < ApplicationController
                 else
                     challenge = []
                 end
-                render json: challenge
+                render json: challenge.to_json( :include => [:tips])
             end
         end
     end
