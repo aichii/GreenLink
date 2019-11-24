@@ -62,8 +62,9 @@ export default class Landing extends React.Component {
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
         <div className={styles.textWrapper}>
+          <h1>Welcome to GreenLink.</h1>
           <h2>
-            Welcome to GreenLink, the site dedicated to inspiring people to reduce their consumption of energy by competing in challenges with their friends and members of their community.
+            The site dedicated to inspiring people to reduce their consumption of energy by competing in challenges with their friends and members of their community.
           </h2>
         </div> 
         </ParallaxLayer>
