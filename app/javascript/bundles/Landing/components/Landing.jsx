@@ -69,23 +69,29 @@ export default class Landing extends React.Component {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={0.5}
+          offset={0.6}
           speed={0.1}
           onClick={() => this.parallax.scrollTo(2)}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        >
           <div className={styles.textWrapper}>
             <h2>
-              Welcome to GreenLink, the site dedicated to inspiring people to reduce their consumption of energy by competing in challenges with their friends and members of their community.
+              What is typography? I do not know how to make this look good or know what sgouls go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
             </h2>
-          </div> 
+          </div>
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={1.2}
+          offset={1.1}
           speed={-0}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          onClick={() => this.parallax.scrollTo(0)}>
-          <img src={url('clients-main')} style={{ width: '40%' }} />
+          onClick={() => this.parallax.scrollTo(0)}
+        >
+          <div className={styles.textWrapper}>
+            <h2>
+              What is typography? I do not know how to make this look good or know what sgouls go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
+            </h2>
+          </div>
         </ParallaxLayer>
       </Parallax>
     )
