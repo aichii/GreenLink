@@ -76,7 +76,7 @@ export default class Landing extends React.Component {
         >
           <div className={styles.textWrapper}>
             <h2>
-              What is typography? I do not know how to make this look good or know what sgouls go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
+              What is typography? I do not know how to make this look good or know what should go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
             </h2>
           </div>
         </ParallaxLayer>
@@ -89,7 +89,7 @@ export default class Landing extends React.Component {
         >
           <div className={styles.textWrapper}>
             <h2>
-              What is typography? I do not know how to make this look good or know what sgouls go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
+              What is typography? I do not know how to make this look good or know what should go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
             </h2>
           </div>
         </ParallaxLayer>
