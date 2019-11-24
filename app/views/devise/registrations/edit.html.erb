@@ -1,20 +1,23 @@
+
 <div class="wrapper-page">
   <h2 class="edit-user-header">Edit <%= resource_name.to_s.humanize %></h2>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="container-account">
-      <% if current_user.profile %>
-        <%= image_tag current_user.profile.avatar.variant(resize_to_limit: [200, 200]),
+  <div class="profile-input">
+    <% if current_user.profile %>
+      <%= image_tag current_user.profile.avatar.variant(resize_to_limit: [200, 200]),
                       style: "border-radius: 100%; object-fit: cover;",
                       width: 200, height: 200 %>
       <% else %>
         <div class="new-img-profile"></div>
-      <% end %>
-      <%= form_with url: profile_url do |form| %>
-        <%= form.file_field :avatar %>
-        <%= form.submit %>
-      <% end %>
-
+    <% end %>
+    <%= form_with url: profile_url do |form| %>
+      <%= form.file_field :avatar %>
+      <%= form.submit %>
+    <% end %>
+  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="container-account">
+     
       <div class="field-edit field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
