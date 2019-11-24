@@ -1,0 +1,30 @@
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.textWrapper {
+  background-color: white;
+  border: 1px lightgray;
+  border-radius: 25px;
+  max-width: 600px;
+  font-size: 14px;
+  font-style: normal;
+  padding: 10px 20px;
+} 
+
+html,
+body,
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+html, body, div, a, i, button, select, option, optgroup, hr, br { 
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;
+  -khtml-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}

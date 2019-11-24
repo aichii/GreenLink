@@ -1,29 +1,42 @@
 .landing-navbar {
-  background-color: #5EBF4D;
+  background-color: transparent;
+  border-bottom: 1px solid gray;
   top: 0;
   left: 0;
   right: 0;
   height: 80px;
+}
+
+.nav-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px 20px 0 20px;
 }
 
-#landing-main {
-  height: calc(80vh - 100px);
-  background-color: lightgreen;
-  display: grid;
-  place-items: center;
-  margin: 0;
-}
-
-footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 90px;
-  background-color: black;
+#logo {
+  width: 48px;
+  height: 48px;
   color: white;
-  font-size: 16px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.create-account-btn {
+  border: 0;
+  background-color: white;
+  width: 100px;
+  height: 30px;
+}
+
+.create-account-btn:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }
