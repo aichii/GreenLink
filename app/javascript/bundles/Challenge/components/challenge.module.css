@@ -1,0 +1,126 @@
+.wrapperChallenge {
+    margin-left: 100px;
+    width: 94%;
+    height: auto;
+    text-transform: uppercase;
+}
+
+.containerChallenge{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.wrapperAllChallenge {
+    width: 94%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 45px 45px 45px;
+    margin: 50px 0 0 0;
+}
+
+.regularChallenges,
+.bigChallenges {
+    margin-top: 25px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.regularChallenges {
+    flex-wrap: wrap;
+}
+
+.biger, 
+.regular {
+    box-shadow: 1px 1px 10px 1px rgba(000, 000, 000, 0.2);
+    border-radius: 8px;
+    color: #000000;
+}
+
+.biger {
+    width: 30%;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.regular {
+    width: 23%;
+    height: 300px;
+    margin: 15px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.regular:hover, 
+.biger:hover {
+    background-color:  rgb(178, 219, 83);
+    color: #ffffff;
+}
+
+.regular.referencesIcon .fa-dollar-sign{  
+    background-color:#000000;
+}
+
+.beautyCircle {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 100%;
+    background: linear-gradient(120deg, rgba(11, 116, 11, 0.5) , rgba(255,255,255, 0.8), rgba(11, 116, 11, 0.8));
+    font-weight: 700;
+    font-size: 16px;
+    background-size: 200% 200%;
+    animation: rainbow 6s ease-in-out infinite;
+    color: #ffffff;
+}
+
+@keyframes rainbow { 
+    0%{background-position:left}
+    50%{background-position:right}
+    100%{background-position:left}
+}
+  
+.smallBottom {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    align-items: center;
+}
+
+.smallBottom button {
+    border: none;
+    border-radius: 2px;
+    width: 80%;
+    height: 35px;
+    background-color: rgb(11, 116, 11);
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.theTitle {
+    font-size: 20px;
+    margin: 20px 0 20px 0;
+}
+
+.upSmallWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    margin-top: -25px
+}
