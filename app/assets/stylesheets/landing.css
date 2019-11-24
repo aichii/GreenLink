@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   height: 80px;
+  position: relative;
 }
 
 .nav-container {
@@ -15,18 +16,23 @@
   position: relative;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 20px 20px 0 20px;
+  padding: 10px 20px 0 20px;
 }
 
 #logo {
   width: 48px;
   height: 48px;
-  color: white;
 }
 
 .logo-container {
   display: flex;
   flex-direction: row;
+  display: flex;
+  place-items: center;
+}
+
+.logo-container h1 {
+  font-weight: 700;
 }
 
 .create-account-btn {
@@ -34,6 +40,7 @@
   background-color: white;
   width: 100px;
   height: 30px;
+  font-size: 20px;
 }
 
 .create-account-btn:hover {
