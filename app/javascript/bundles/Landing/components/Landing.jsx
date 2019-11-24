@@ -9,8 +9,8 @@ const url3 = `https://image.flaticon.com/icons/svg/439/439842.svg`
 export default class Landing extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={2} style={{ backgroundColor: '#87BCDE' }}>
-        <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
+      <Parallax ref={ref => (this.parallax = ref)} pages={2} style={{ backgroundColor: '#BAE1EB' }}>
+        <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#BAE1EB' }} />
 
         <ParallaxLayer offset={0.2} speed={-0.3} style={{ pointerEvents: 'none' }}>
           <img src={url2} style={{ width: '15%', marginLeft: '70%' }} />
