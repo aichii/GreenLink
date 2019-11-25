@@ -23,17 +23,17 @@ export default class Landing extends React.Component {
           <img src={sun} style={{ width: '15%', marginLeft: '10%' }} />
         </ParallaxLayer>
         
-        <ParallaxLayer offset={0.2} speed={.8} style={{ opacity: 0.3 }}>
+        <ParallaxLayer offset={0.1} speed={.8} style={{ opacity: 0.3 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '65%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '20%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.4} speed={0.8} style={{ opacity: 0.2 }}>
+        <ParallaxLayer offset={0.3} speed={0.8} style={{ opacity: 0.2 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.25} speed={0.5} style={{ opacity: 0.3 }}>
+        <ParallaxLayer offset={1.2} speed={0.5} style={{ opacity: 0.3 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
         </ParallaxLayer>
@@ -43,13 +43,13 @@ export default class Landing extends React.Component {
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.9} speed={-0.1} style={{ opacity: 0.5 }}>
+        <ParallaxLayer offset={0.8} speed={-0.1} style={{ opacity: 0.5 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.4} speed={0.4} style={{ opacity: 0.6 }}>
+        <ParallaxLayer offset={1.2} speed={0.4} style={{ opacity: 0.6 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
