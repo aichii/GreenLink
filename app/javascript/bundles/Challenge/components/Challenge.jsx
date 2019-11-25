@@ -7,7 +7,7 @@ import Modal from 'react-modal';
 export default class Challenge extends Component {
     state = {
         challenges: [],
-        challengeSelect: [],
+        challengeSelect: {tips: []},
         modalIsOpen: false,
         icons: [
             [<i key={1} className="fas fa-globe-americas"></i>],
@@ -26,19 +26,13 @@ export default class Challenge extends Component {
 
     allChallenges = () => {
         axios.get(`/challenges/challenges.json`)
-        .then(res => {
-            const allMyChallenges = []
-            res.data.map(eachChallenge => {
-                allMyChallenges.push(eachChallenge)
-            })
-            this.setState({ challenges: allMyChallenges})
-        })
+            .then(res => this.setState({ challenges: res.data}))
     }
 
      // MODAL
     openModal = value => {
         this.setState({
-          challengeSelect: [this.state.challenges[value]],
+          challengeSelect: this.state.challenges[value],
           modalIsOpen: true
         });
 
@@ -48,10 +42,12 @@ export default class Challenge extends Component {
       this.setState({ modalIsOpen: false });
     };
 
+
+
     render(){
         const { challenges, challengeSelect } = this.state
         return(
-            <>
+            <div>
                 <div className={styles.wrapperChallenge}>
                     <h1>Challenges</h1>
                     <hr></hr>
@@ -64,7 +60,7 @@ export default class Challenge extends Component {
                                     if(theChallenge.points >= 99){
                                         return( 
                                             <div
-                                            className={styles.biger} 
+                                            className={styles.biger}
                                             key={i}
                                             id={i}
                                             onClick={() => this.openModal(i)}
@@ -141,64 +137,47 @@ export default class Challenge extends Component {
                         className={CustomStyleModal.Modal}
                         overlayClassName={CustomStyleModal.Overlay}
                         contentLabel="GREENLINK"
+                        ariaHideApp={false}
                     >
-                        <div className={CustomStyleModal.contentModal}> 
+                        <div className={CustomStyleModal.contentModal}>
                         <div onClick={this.closeModal}><i className="fas fa-times"></i></div>
                             <div className={CustomStyleModal.descriptionChallenge}>
-                            {
-                                challengeSelect.map((challenge) => {
-                                    return(
-                                        <>
-                                        <div
-                                        key={challenge.id}
-                                        id={challenge.id}
-                                        className={CustomStyleModal.bodyChallenge}
-                                        >
-                                            <h2>{challenge.title}</h2>
-                                            <p>{challenge.description}</p>
-                                        </div>
-                                        <div className={CustomStyleModal.tipsForChallenge}>
-                                        {
-                                            challenge.tips.map((eachTip, i) => {
-                                                return(
-                                                    <>
-                                                    <div 
-                                                    key={i}
-                                                    id={i}
-                                                    className={CustomStyleModal.wrapperTips}
-                                                    >
-                                                        <div className={CustomStyleModal.numberTips}>
-                                                            <h3>0{i + 1} <span> / 0{challenge.tips.length}</span></h3>
-                                                        </div>
-                                                        <div className={CustomStyleModal.bodyTips}>
-                                                            <span>{eachTip.title}</span><br></br>
-                                                            <span>Type: {eachTip.type_id}</span>
-                                                            <p>{eachTip.description}</p>
-                                                        </div>
-                                                    </div>
-                                                    </>
-                                                )
-                                            })
-                                        }
-                                        </div>
-                                        </>
-                                    )
-                                })
-                            }
+                                <div
+                                    id={challengeSelect.id}
+                                    className={CustomStyleModal.bodyChallenge}
+                                >
+                                    <h2>{challengeSelect.title}</h2>
+                                    <p>{challengeSelect.description}</p>
+                                </div>
+                                <div className={CustomStyleModal.tipsForChallenge}>
+                                    {
+                                        challengeSelect.tips.map((eachTip, i) => (
+                                            <div
+                                            key={i}
+                                            id={i}
+                                            className={CustomStyleModal.wrapperTips}
+                                            >
+                                                <div className={CustomStyleModal.numberTips}>
+                                                    <h3>0{i + 1} <span> / 0{challengeSelect.tips.length}</span></h3>
+                                                </div>
+                                                <div className={CustomStyleModal.bodyTips}>
+                                                    <span>{eachTip.title}</span><br></br>
+                                                    <span>Type: {eachTip.type_id}</span>
+                                                    <p>{eachTip.description}</p>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
                             </div>
-
                         </div>
                     </Modal>
                 </div>
-            </>
+            </div>
         )
     }
 
     componentDidMount(){
         this.allChallenges()
     }
-
-    UNSAFE_componentWillMount() {
-        Modal.setAppElement('body');
-      }
 }
