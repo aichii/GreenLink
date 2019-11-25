@@ -1,0 +1,15 @@
+#mainBox {
+  margin-left: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.rankContainer {
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px rgba(000, 000, 000, 0.2);
+  border-radius: 8px;
+  color: #000000;
+  width: 600px;
+  margin: 0 10px;
+}

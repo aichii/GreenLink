@@ -6,7 +6,9 @@ class FplAccount < ApplicationRecord
   include Encryptable
   attr_encrypted :username, :password
 
-  scope :testing,      -> { where(zipcode: "33024" )}
+  default_scope { includes(:user)}
+  
+  scope :testing,         -> { where(zipcode: "33024" )}
 
   def scrape_for_bills
     BillScrapeJob.perform_later(self)
@@ -15,9 +17,8 @@ class FplAccount < ApplicationRecord
   def as_json(options={})
     {
       id:                 id,
-      user_id:            id,
       zipcode:            zipcode,
-      user_email:         User.find(id).email
+      user_email:         user.email
     }
   end
 end
