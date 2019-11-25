@@ -1,5 +1,6 @@
 <div class="wrapper-page"</div>
   <h1>Welcome, <%= current_user.email %></h1>
+  <hr>
   <% if current_user.fpl_account %>
     <%= react_component 'Dashboard' %>
     <%= button_to "Sync Account",
