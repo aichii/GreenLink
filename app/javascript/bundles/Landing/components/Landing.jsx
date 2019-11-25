@@ -58,16 +58,16 @@ export default class Landing extends React.Component {
           <img src={hills} style={{ width: '100%'}} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.42} speed={-0.99} style={{ pointerEvents: 'none'}}>
-          <img src={solar} style={{ width: '5%', marginLeft: '12%' }} />
+        <ParallaxLayer offset={1.55} speed={-0.99} style={{ pointerEvents: 'none'}}>
+          <img src={solar} style={{ width: '5%', marginLeft: '18%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.4} speed={-0.99} style={{ pointerEvents: 'none'}}>
-          <img src={house} style={{ width: '25%', marginLeft: '10%' }} />
+        <ParallaxLayer offset={1.55} speed={-0.99} style={{ pointerEvents: 'none'}}>
+          <img src={house} style={{ width: '17%', marginLeft: '18%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={-0.05}
+          offset={-0.04}
           speed={0.1}
           onClick={() => this.parallax.scrollTo(1)}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
