@@ -113,10 +113,10 @@ export default class Dashboard extends Component {
                     dataKwh: {
                         labels: [
                             'Total Consume of Energy',
-                            'Last Total Consume of Energy'
+                            'Higher Power Consumption'
                         ],
                         datasets: [{
-                            data: [totalEnergy, kwh[kwh.length -1]],
+                            data: [totalEnergy, Math.max(...kwh)],
                             backgroundColor: [
                                 '#36A2EB',
                                 '#FFCE56'
