@@ -8,6 +8,8 @@ class BillScrapeJob < ApplicationJob
     sleep 5
     browser.element(text: "Visit Energy Dashboard").click
     sleep 5
+    zipcode = browser.tds(id: "accServiceAddress").map(&:text).reject(&:empty?).pop.last(5)
+    fpl_account.update(zipcode: zipcode) if fpl_account.zipcode != zipcode
     magic_script = browser.scripts.find{|s| s.html.include?('Billing Period')}.html
     regex = /Billing Period: (.*?) to (.*?){br}Bill Amount: \$(.*?){br}Billed kWh: (.*?) kWh/
     magic_script.scan(regex) do |start_date, end_date, bill_amount, kWh|
