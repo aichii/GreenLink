@@ -4,20 +4,23 @@ import styles from './landing.module.css'
 import hills from './hills.png'
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
-const url2 = `https://image.flaticon.com/icons/svg/2258/2258708.svg`
-const url3 = `https://image.flaticon.com/icons/svg/439/439842.svg`
+const balloon = `https://image.flaticon.com/icons/svg/2258/2258708.svg`
+const sun = `https://image.flaticon.com/icons/svg/439/439842.svg`
+const house = `https://image.flaticon.com/icons/svg/1352/1352938.svg`
+const solar = `https://image.flaticon.com/icons/svg/649/649853.svg`
+
 export default class Landing extends React.Component {
   render() {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={2} style={{ backgroundColor: '#BAE1EB' }}>
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#BAE1EB' }} />
 
-        <ParallaxLayer offset={0.2} speed={-0.3} style={{ pointerEvents: 'none' }}>
-          <img src={url2} style={{ width: '15%', marginLeft: '70%' }} />
+        <ParallaxLayer offset={0.15} speed={-0.3} style={{ pointerEvents: 'none' }}>
+          <img src={balloon} style={{ width: '15%', marginLeft: '70%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.1} speed={-0.9} style={{ pointerEvents: 'none' }}>
-          <img src={url3} style={{ width: '15%', marginLeft: '10%' }} />
+        <ParallaxLayer offset={0.05} speed={-0.9} style={{ pointerEvents: 'none' }}>
+          <img src={sun} style={{ width: '15%', marginLeft: '10%' }} />
         </ParallaxLayer>
         
         <ParallaxLayer offset={0.2} speed={.8} style={{ opacity: 0.3 }}>
@@ -51,15 +54,23 @@ export default class Landing extends React.Component {
           <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.6} speed={-0.99} style={{ pointerEvents: 'none' }}>
+        <ParallaxLayer offset={1.55} speed={-0.99} style={{ pointerEvents: 'none', zIndex: '2' }}>
           <img src={hills} style={{ width: '100%'}} />
         </ParallaxLayer>
 
+        <ParallaxLayer offset={1.42} speed={-0.99} style={{ pointerEvents: 'none'}}>
+          <img src={solar} style={{ width: '5%', marginLeft: '12%' }} />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1.4} speed={-0.99} style={{ pointerEvents: 'none'}}>
+          <img src={house} style={{ width: '25%', marginLeft: '10%' }} />
+        </ParallaxLayer>
+
         <ParallaxLayer
-          offset={0}
+          offset={-0.05}
           speed={0.1}
           onClick={() => this.parallax.scrollTo(1)}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
         >
         <div className={styles.textWrapper}>
           <h1>Welcome to GreenLink.</h1>
@@ -73,7 +84,7 @@ export default class Landing extends React.Component {
           offset={0.6}
           speed={0.1}
           onClick={() => this.parallax.scrollTo(2)}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
         >
           <div className={styles.textWrapper}>
             <h2>
@@ -85,7 +96,7 @@ export default class Landing extends React.Component {
         <ParallaxLayer
           offset={1.1}
           speed={-0}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
           onClick={() => this.parallax.scrollTo(0)}
         >
           <div className={styles.textWrapper}>
