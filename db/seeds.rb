@@ -265,17 +265,24 @@ Challenge.create(
                     tips: [t17,t25,t33]
                 )
 
-user = User.create(email: "some@guy.com", password: "password")
-fpl_account = FplAccount.create!(username: "some@guy.com", password: "password", user: user)
-
-10.times do |n|
-  Bill.create(
-    start_date: (n+2).months.ago.to_date,
-    end_date: (n+1).months.ago.to_date,
-    kilowatt_hours: rand(2_000),
-    amount_cents: rand(200_000),
-    fpl_account: fpl_account
-  )
+# seed 100 users
+100.times do |n|
+  user = User.create(email: "user#{n+1}@email.com", password: "password")
+  fpl_account = FplAccount.create!(
+                  username: "user#{n+1}@email.com",
+                  password: "password",
+                  user: user,
+                  zipcode: ["33132", "33024", "33126", "33141", "33139", "33140"].sample
+                )
+  10.times do |n|
+    Bill.create(
+      start_date: (n+2).months.ago.to_date,
+      end_date: (n+1).months.ago.to_date,
+      kilowatt_hours: rand(800...1100),
+      amount_cents: rand(8_000...11_500),
+      fpl_account: fpl_account
+    )
+  end
+  Sync.create(fpl_account: fpl_account)
 end
-
-Sync.create(fpl_account: fpl_account)
+puts "#{User.count} users with #{Bill.count} bills"
