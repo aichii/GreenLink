@@ -25,7 +25,7 @@ export default class Challenge extends Component {
     }
 
     allChallenges = () => {
-        axios.get(`/challenges/challenges.json`)
+        axios.get(`/challenges.json`)
             .then(res => this.setState({ challenges: res.data}))
     }
 

@@ -1,10 +1,8 @@
 class ChallengesController < ApplicationController
    
     def index
-    end
-
-    def show
         respond_to do |format|
+            format.html
             format.json do
                 if current_user.fpl_account
                     challenges = Challenge.all
