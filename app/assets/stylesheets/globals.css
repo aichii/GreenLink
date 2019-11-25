@@ -33,26 +33,3 @@ a:visited {
   position: relative;
   margin-top: 0;
 }
-
-.fa-globe-americas,
-.fa-medal,
-.fa-hand-holding-usd,
-.fa-comment-dollar,
-.fa-temperature-high,
-.fa-users,
-.fa-handshake,
-.fa-share-alt,
-.fa-history,
-.fa-check-double,
-.fa-power-off {
-  font-size: 90px;
-  margin: 20px 0 10px 0;
-  color: rgb(47, 145, 60);
-}
-
-.fa-times{
-  color: #cccccc;
-  position: absolute;
-  top: 25px;
-  left: 25px;
-}

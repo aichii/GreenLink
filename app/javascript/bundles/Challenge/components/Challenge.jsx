@@ -10,17 +10,17 @@ export default class Challenge extends Component {
         challengeSelect: [],
         modalIsOpen: false,
         icons: [
-            [<i className="fas fa-globe-americas"></i>],
-            [<i className="fas fa-medal"></i>],
-            [<i className="fas fa-hand-holding-usd"></i>],
-            [<i className="fas fa-comment-dollar"></i>],
-            [<i className="fas fa-temperature-high"></i>],
-            [<i className="fas fa-users"></i>],
-            [<i className="fas fa-handshake"></i>],
-            [<i className="fas fa-share-alt"></i>],
-            [<i className="fas fa-history"></i>],
-            [<i className="fas fa-check-double"></i>],
-            [<i className="fas fa-power-off"></i>],
+            [<i key={1} className="fas fa-globe-americas"></i>],
+            [<i key={2} className="fas fa-medal"></i>],
+            [<i key={3} className="fas fa-hand-holding-usd"></i>],
+            [<i key={4} className="fas fa-comment-dollar"></i>],
+            [<i key={5} className="fas fa-temperature-high"></i>],
+            [<i key={6} className="fas fa-users"></i>],
+            [<i key={7} className="fas fa-handshake"></i>],
+            [<i key={8} className="fas fa-share-alt"></i>],
+            [<i key={9} className="fas fa-history"></i>],
+            [<i key={10} className="fas fa-check-double"></i>],
+            [<i key={11} className="fas fa-power-off"></i>],
         ]
     }
 
@@ -48,7 +48,7 @@ export default class Challenge extends Component {
       this.setState({ modalIsOpen: false });
     };
 
-    render() {
+    render(){
         const { challenges, challengeSelect } = this.state
         return(
             <>
@@ -62,8 +62,7 @@ export default class Challenge extends Component {
                             {   
                                 challenges.map((theChallenge, i) => {
                                     if(theChallenge.points >= 99){
-                                        return(
-                                            <>
+                                        return( 
                                             <div
                                             className={styles.biger} 
                                             key={i}
@@ -88,7 +87,6 @@ export default class Challenge extends Component {
                                                     <div className={styles.beautyCircle}></div>
                                                 </div>
                                             </div>
-                                            </>
                                         )
                                     }
                                 })
@@ -102,7 +100,6 @@ export default class Challenge extends Component {
                                     challenges.map((theChallenge, i) => {
                                         if(theChallenge.points < 99){
                                             return(
-                                                <>
                                                 <div
                                                 className={styles.regular}
                                                 key={i}
@@ -129,7 +126,6 @@ export default class Challenge extends Component {
                                                         <div className={styles.beautyCircle}></div>
                                                     </div>
                                                 </div>
-                                                </>
                                             )
                                         }
                                     })
