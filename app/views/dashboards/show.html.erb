@@ -13,7 +13,7 @@
     <%= form_with url: fpl_account_url do |f| %>
       <p>
         <%= f.label :username%>
-        <%= f.email_field :username, autocomplete: "off", value: current_user.email  %>
+        <%= f.email_field :username, autocomplete: "off", value: current_user.email %>
       </p>
       <p>
         <%= f.label :password %>
