@@ -7,7 +7,13 @@
   </nav>
 <% elsif user_signed_in? %>
   <nav class="navbar">
-    <div class="container-img"></div>
+    <% if current_user.profile %>
+      <%= image_tag current_user.profile.avatar.variant(resize_to_limit: [200, 200]),
+                      style: "border-radius: 100%; object-fit: cover; margin-bottom: 20px",
+                      width: 64, height: 64 %>
+    <% else %>
+      <div class="container-img"></div>
+    <% end %>
     <div class="container-nav">
       <div class="user-profile"> 
         <%= link_to root_url, class: "#{'active' if current_page?(dashboard_url)}" do %>
