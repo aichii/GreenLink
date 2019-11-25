@@ -7,11 +7,11 @@ class ChallengesController < ApplicationController
         respond_to do |format|
             format.json do
                 if current_user.fpl_account
-                    challenge = Challenge.all
+                    challenges = Challenge.all
                 else
-                    challenge = []
+                    challenges = []
                 end
-                render json: challenge.to_json( :include => [:tips])
+                render json: challenges.to_json( :include => [:tips])
             end
         end
     end
