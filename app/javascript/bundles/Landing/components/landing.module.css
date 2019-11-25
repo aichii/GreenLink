@@ -1,0 +1,31 @@
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.textWrapper {
+  max-width: 700px;
+  font-size: 14px;
+  font-style: normal;
+  padding: 10px 20px;
+} 
+
+.textWrapper h1 {
+  font-weight: 700;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+html, body, div, a, i, button, select, option, optgroup, hr, br { 
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;
+  -khtml-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}

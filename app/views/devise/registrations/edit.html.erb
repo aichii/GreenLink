@@ -45,8 +45,7 @@
         <%= f.submit "Update" %>
     </div>
   <% end %>
-
-    <div class="danger-zone">
+  <div class="danger-zone">
     <% if current_user.fpl_account %>
       <%= button_to "Delete FPL Account",
           fpl_account_url, method: :delete,

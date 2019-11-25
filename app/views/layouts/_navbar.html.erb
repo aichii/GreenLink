@@ -1,9 +1,16 @@
 <% if !user_signed_in? && !current_page?(new_user_session_path)%>
   <nav class="landing-navbar">
-    <h1>GreenLink</h1>
-    <ul>
-      <button><%= link_to "Sign In", new_user_session_path %></button>
-    </ul>
+    <div class="nav-container">
+      <div class="logo-container">
+        <img src="https://image.flaticon.com/icons/svg/702/702814.svg" id="logo"/>
+        <h1>GreenLink</h1>
+      </div>
+      <ul>
+        <button class="create-account-btn">
+          <%= link_to "Account", new_user_session_path %>
+        </button>
+      </ul>
+    </div>
   </nav>
 <% elsif user_signed_in? %>
   <nav class="navbar">

@@ -1,4 +1,4 @@
-<div class="wrapper-page"</div>
+<div class="wrapper-page"></div>
   <h1>Welcome, <%= current_user.email %></h1>
   <hr>
   <% if current_user.fpl_account %>
@@ -12,8 +12,8 @@
     <h1>Connect your FPL Account</h1>
     <%= form_with url: fpl_account_url do |f| %>
       <p>
-        <%= f.label :username %>
-        <%= f.email_field :username, autocomplete: "off" %>
+        <%= f.label :username%>
+        <%= f.email_field :username, autocomplete: "off", value: current_user.email %>
       </p>
       <p>
         <%= f.label :password %>
