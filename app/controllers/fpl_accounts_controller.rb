@@ -14,4 +14,18 @@ class FplAccountsController < ApplicationController
     current_user.fpl_account&.destroy
     redirect_back fallback_location: root_url, notice: "FPL Account successfully deleted"
   end
+
+  def index
+    respond_to do |format|
+      format.html
+      format.json do
+        if current_user.fpl_account&.zipcode
+          fpl_accounts = FplAccount.where(zipcode: current_user.fpl_account.zipcode)
+        else
+          fpl_accounts = []
+        end
+        render json: fpl_accounts
+      end
+    end
+  end
 end
