@@ -198,9 +198,10 @@ t36 = Tip.create(
 #################### BIG CHALLENGES ####################
 Challenge.create(   
                     title: 'Energy for the world', 
-                    description: 'Keep your energy consumption per month less than 1000 kwh.', 
-                    points: 100, 
-                    tips: [t1,t2,t3]
+                    description: 'Keep your energy consumption per month less than 1000 kwh.',
+                    points: 100,
+                    tips: [t1,t2,t3],
+                    verification_method: "last_bill_under_1000_kwh?"
                 )
 Challenge.create(   
                     title: 'Get first', 
