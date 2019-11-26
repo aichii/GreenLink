@@ -1,6 +1,5 @@
 import React from 'react'
 import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
-import styles from './landing.module.css'
 import hills from './hills.png'
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
@@ -72,7 +71,7 @@ export default class Landing extends React.Component {
           onClick={() => this.parallax.scrollTo(1)}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
         >
-        <div className={styles.textWrapper}>
+        <div className="textWrapper">
           <h1>Welcome to GreenLink.</h1>
           <h2>
             The site dedicated to inspiring people to reduce their consumption of energy by competing in challenges with their friends and members of their community.
@@ -86,7 +85,7 @@ export default class Landing extends React.Component {
           onClick={() => this.parallax.scrollTo(2)}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
         >
-          <div className={styles.textWrapper}>
+          <div className="textWrapper">
             <h2>
               What is typography? I do not know how to make this look good or know what should go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
             </h2>
@@ -99,7 +98,7 @@ export default class Landing extends React.Component {
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
           onClick={() => this.parallax.scrollTo(0)}
         >
-          <div className={styles.textWrapper}>
+          <div className="textWrapper">
             <h2>
               What is typography? I do not know how to make this look good or know what should go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
             </h2>
