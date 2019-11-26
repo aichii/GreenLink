@@ -1,16 +1,29 @@
 <% if !user_signed_in? && !current_page?(new_user_session_path)%>
   <nav class="landing-navbar">
-    <h1>GreenLink</h1>
-    <ul>
-      <button><%= link_to "Sign In", new_user_session_path %></button>
-    </ul>
+    <div class="nav-container">
+      <div class="logo-container">
+        <img src="https://image.flaticon.com/icons/svg/702/702814.svg" id="logo"/>
+        <h1>GreenLink</h1>
+      </div>
+      <ul>
+        <button class="create-account-btn">
+          <%= link_to "Account", new_user_session_path %>
+        </button>
+      </ul>
+    </div>
   </nav>
 <% elsif user_signed_in? %>
   <nav class="navbar">
-    <div class="container-img"></div>
+    <% if current_user.profile %>
+      <%= image_tag current_user.profile.avatar.variant(resize_to_limit: [200, 200]),
+                      style: "border-radius: 100%; object-fit: cover; margin-bottom: 20px",
+                      width: 64, height: 64 %>
+    <% else %>
+      <div class="container-img"></div>
+    <% end %>
     <div class="container-nav">
       <div class="user-profile"> 
-        <%= link_to root_url, class: "#{'active' if current_page?(root_url)}" do %>
+        <%= link_to root_url, class: "#{'active' if current_page?(dashboard_url)}" do %>
           <div class="wrapper-home"><i class="fas fa-home"></i></div>
         <% end %>  
         <%= link_to challenges_url, class: "#{'active' if current_page?(challenges_url)}" do %>
