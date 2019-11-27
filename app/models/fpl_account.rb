@@ -12,7 +12,7 @@ class FplAccount < ApplicationRecord
 
   default_scope { includes(user: :profile) }
 
-  scope :testing,         -> { where(zipcode: "33024" )}
+  scope :points_sorted,   -> { sort("points: DESC") }
 
   def scrape_for_bills
     BillScrapeJob.perform_later(self)

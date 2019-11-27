@@ -2,13 +2,11 @@
   margin-left: 100px;
   display: flex;
   flex-direction: row;
+  place-items: center;
   justify-content: center;
 }
 
 .rank-container {
-  /* background-color: white;
-  box-shadow: 1px 1px 10px 1px rgba(000, 000, 000, 0.2);
-  border-radius: 8px; */
   color: #000000;
   border: 1px solid red;
   margin: 0 10px;

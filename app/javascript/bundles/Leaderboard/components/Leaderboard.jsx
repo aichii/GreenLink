@@ -43,7 +43,9 @@ export default class Leaderboard extends React.Component {
                       <h3>
                         {user.zipcode}
                       </h3>
-                      <h2>PTS</h2>
+                      <h2>
+                        {user.points}
+                      </h2>
                     </div>
                   )
                 }
@@ -85,6 +87,7 @@ export default class Leaderboard extends React.Component {
                 }
               })
             }
+            
           </div>
         </div>
       </main>
