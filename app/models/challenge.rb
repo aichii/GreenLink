@@ -12,13 +12,13 @@ class Challenge < ApplicationRecord
 	private
 
 	def last_bill_under_1000_kwh?(fpl_account)
-		return false unless fpl_account.bills.any?
+		return false unless fpl_account.bills.last
 		fpl_account.bills.last.kilowatt_hours < 1000
 	end
 
 	def last_bill_5_dollars_less?(fpl_account)
-		return false unless fpl_account.bills.any?
-		fpl_account.bills.last.amount_cents - fpl_account.bills.all[-2].amount_cents > 500
+		return false unless fpl_account.bills.last(2).count == 2
+		fpl_account.bills.last(2).first.amount_cents - fpl_account.bills.last(2).last.amount_cents > 500
 	end
 
 	def last_bill_20_dollars_less?(fpl_account)

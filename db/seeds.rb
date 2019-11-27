@@ -203,13 +203,13 @@ Challenge.create(
                     tips: [t1,t2,t3],
                     verification_method: "last_bill_under_1000_kwh?"
                 )
-Challenge.create(   
+Challenge.create(
                     title: 'Get first', 
                     description: 'Stay in the top 5 positions of your network rank.', 
                     points: 100, 
                     tips: [t4,t5,t6]
                 )
-Challenge.create(   
+Challenge.create(
                     title: 'Win $300', 
                     description: 'Reduce your total bill amount by $300 in a year ($25 each month).', 
                     points: 1200, 
