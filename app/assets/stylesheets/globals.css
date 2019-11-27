@@ -18,19 +18,19 @@ li {
 
 a {
   text-decoration: none;
-  color: black;
 }
 
-a:visited {
-  color: black;
-}
-
-.notice {
-  position: relative;
-  margin-top: 0;
-}
-
+.notice,
 .alert {
-  position: relative;
-  margin-top: 0;
+  position: absolute;
+  top: 120px;
+  color: red;
+  z-index: 999;
+  margin-left: 50px;
+}
+
+.link-to-home{
+  color: #ffffff;
+  font-weight: 500; 
+  font-size: 35px;
 }
