@@ -1,9 +1,3 @@
-<div class="wrapper-page"</div>
-<h1>Tips</h1>
-
-<% @tips.each do |tp| %>
-    <p>
-        title: <%= tp.title %><br/>
-        description: <%= tp.description %>
-    </p>
-<% end %>
+<div class="wrapper-page">
+  <%= react_component 'Tips' %>
+</div>
