@@ -13,7 +13,7 @@ export default class Challenge extends Component {
             [<i key={3} className="fas fa-hand-holding-usd"></i>],
             [<i key={4} className="fas fa-comment-dollar"></i>],
             [<i key={5} className="fas fa-temperature-high"></i>],
-            [<i key={6} className="fas fa-users"></i>],
+            [<i key={6} class="fas fa-user-friends"></i>],
             [<i key={7} className="fas fa-handshake"></i>],
             [<i key={8} className="fas fa-share-alt"></i>],
             [<i key={9} className="fas fa-history"></i>],

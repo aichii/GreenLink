@@ -18,8 +18,8 @@ export default class Landing extends React.Component {
           <img className="small-el" src={elSmall} style={{ width: '15%', marginLeft: '31.3%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.05} speed={-0.9} style={{ pointerEvents: 'none' }}>
-          <img src={sun} style={{ width: '10%', marginLeft: '10%' }} />
+        <ParallaxLayer offset={0.1} speed={-0.9} style={{ pointerEvents: 'none' }}>
+          <img src={sun} style={{ width: '8%', marginLeft: '10%' }} />
         </ParallaxLayer>
         
         <ParallaxLayer offset={0.1} speed={.8} style={{ opacity: 0.3 }}>
