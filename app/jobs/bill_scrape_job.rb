@@ -1,7 +1,17 @@
 class BillScrapeJob < ApplicationJob
 
   def perform(fpl_account)
-    browser = Watir::Browser.new :chrome, headless: true
+    if Rails.env.production?
+      args = %w[--disable-infobars --headless window-size=1600,1200 --no-sandbox --disable-gpu]
+      options = {
+         binary: ENV['GOOGLE_CHROME_BIN'],
+         prefs: { password_manager_enable: false, credentials_enable_service: false },
+         args:  args
+      }
+      browser = Watir::Browser.new :chrome, options: options
+    else
+      browser = Watir::Browser.new :chrome, headless: true
+    end
     browser.goto "http://fpl.com"
     browser.input(name: "username").send_keys(fpl_account.username)
     browser.input(name: "password").send_keys(fpl_account.password, :return)
