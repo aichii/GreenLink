@@ -240,7 +240,8 @@ Challenge.create(
                     title: 'Welcome to GreenLink', 
                     description: "You have earned 10 pts for activating your user account. These points generate a ranking in your network and identify your contribution to reduce electricity consumption. Congratulations!", 
                     points: 10, 
-                    tips: [t36]
+                    tips: [t36],
+                    verification_method: "user_has_fpl_account?"
                 )
 Challenge.create(   
                     title: 'Sharing shake', 
@@ -258,13 +259,15 @@ Challenge.create(
                     title: 'You can do it', 
                     description: 'This month you can reduce the bill amount $20', 
                     points: 20, 
-                    tips: [t16,t24,t32]
+                    tips: [t16,t24,t32],
+                    verification_method: "last_bill_20_dollars_less?"
                 )
 Challenge.create(   
                     title: 'Less for less', 
                     description: 'Reduce your consume of energy (Kwh) in the month 20Kwh', 
                     points: 5, 
-                    tips: [t17,t25,t33]
+                    tips: [t17,t25,t33],
+                    verification_method: "last_bill_20_kwh_less?"
                 )
 
 # seed 100 users
@@ -280,7 +283,7 @@ Challenge.create(
     Bill.create(
       start_date: (n+2).months.ago.to_date,
       end_date: (n+1).months.ago.to_date,
-      kilowatt_hours: rand(800...1100),
+      kilowatt_hours: rand(800...1200),
       amount_cents: rand(8_000...11_500),
       fpl_account: fpl_account
     )
