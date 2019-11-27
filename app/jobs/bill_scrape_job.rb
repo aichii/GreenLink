@@ -32,6 +32,7 @@ class BillScrapeJob < ApplicationJob
     end
     Sync.create(fpl_account: fpl_account)
     BillScrapeChannel.broadcast_to(fpl_account.user, { refetch_bills: true })
+    GC.start
   end
 
 end
