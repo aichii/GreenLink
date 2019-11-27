@@ -1,0 +1,28 @@
+.tips-each-tips{
+  border-bottom: 1px solid green;
+}
+
+.tips-each-tips h3 {
+  font-weight: bold;
+  color: rgb(2, 104, 2);
+}
+
+.container-alltips {
+  width: 80%;
+  height: auto;
+  margin: 30px 0 30px 0;
+}
+
+.container-alltips h1 {
+  margin: 33px 0 0 0;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.wrapper-container-tips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
