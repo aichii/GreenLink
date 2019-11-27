@@ -5,6 +5,7 @@ import Challenge from '../bundles/Challenge/components/Challenge';
 import Landing from '../bundles/Landing/components/Landing';
 import Tips from '../bundles/Tips/components/Tips'
 
+
 // This is how react_on_rails can see the components in the browser.
 ReactOnRails.register({
   Dashboard,
