@@ -17,7 +17,8 @@
     "react-modal": "^3.11.1",
     "react-on-rails": "11.3.0",
     "react-spring": "^8.0.27",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "typed-css-modules-webpack-plugin": "^0.1.2"
   },
   "version": "0.1.0",
   "devDependencies": {
