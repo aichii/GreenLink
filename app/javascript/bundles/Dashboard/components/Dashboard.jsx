@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Line, Doughnut } from 'react-chartjs-2'
-import style from './dashboard.module.css'
 
 export default class Dashboard extends Component {
     constructor(props){
@@ -157,8 +156,8 @@ export default class Dashboard extends Component {
     if (this.state.loading) return <h1>Loading...</h1>
     return(
         <>
-        <div className={style.containerDashboard}>
-            <div className={style.mainChartContainer}>
+        <div className="containerDashboard">
+            <div className="mainChartContainer">
                 <h2>HISTORY</h2>
                 <Line
                     datasetKeyProvider = {this.datasetKeyProvider}
@@ -171,10 +170,10 @@ export default class Dashboard extends Component {
                 />
             </div>
         </div>
-        <div className={style.containerSecondaryDashboard}>
-            <div className={style.wrapperSecondaryChart}>
+        <div className="containerSecondaryDashboard">
+            <div className="wrapperSecondaryChart">
                 <h2>TOTAL PAYMENTS $$</h2>
-                <div className={style.secondaryChartContainer}>
+                <div className="secondaryChartContainer">
                     <Doughnut
                         width={200}
                         height={100}
@@ -185,9 +184,9 @@ export default class Dashboard extends Component {
                     />
                 </div>
             </div>
-            <div className={style.wrapperSecondaryChart}>
+            <div className="wrapperSecondaryChart">
                 <h2>TOTAL CONSUME OF ENERGY</h2>
-                <div className={style.secondaryChartContainer}>
+                <div className="secondaryChartContainer">
                     <Doughnut
                         width={200}
                         height={100}
@@ -198,9 +197,9 @@ export default class Dashboard extends Component {
                     />
                 </div>
             </div>
-            <div className={style.wrapperSecondaryChart}>
+            <div className="wrapperSecondaryChart">
                 <h2>BROKEN LINE OF 1000KWH</h2>
-                <div className={style.secondaryChartContainer}>
+                <div className="secondaryChartContainer">
                     <Doughnut
                         width={200}
                         height={100}
