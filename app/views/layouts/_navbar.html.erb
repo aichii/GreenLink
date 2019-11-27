@@ -1,15 +1,15 @@
-<% if !user_signed_in? && !current_page?(new_user_session_path)%>
+<% if !user_signed_in? && !current_page?(new_user_session_path) || current_page?(new_user_session_path)%>
   <nav class="landing-navbar">
     <div class="nav-container">
       <div class="logo-container">
-        <img src="https://image.flaticon.com/icons/svg/702/702814.svg" id="logo"/>
-        <h1>GreenLink</h1>
+        <%= image_tag ( "greenlinkLogo.png" ), :id => "logo" %>
+        <%= link_to "GREENLINK", root_path, :class => "link-to-home" %>
       </div>
-      <ul>
+      <div class="nav-pages">
         <button class="create-account-btn">
-          <%= link_to "Account", new_user_session_path %>
-        </button>
-      </ul>
+          <%= link_to( "Get Instant Access", new_user_session_path, method: :get ) %>
+        </button>        
+      </div>
     </div>
   </nav>
 <% elsif user_signed_in? %>

@@ -1,12 +1,12 @@
 import React from 'react'
 import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
 import hills from './hills.png'
+import second from './second.png'
+import elSmall from './smallel.png'
+import elBig from './bigel.png'
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
-const balloon = `https://image.flaticon.com/icons/svg/2258/2258708.svg`
 const sun = `https://image.flaticon.com/icons/svg/439/439842.svg`
-const house = `https://image.flaticon.com/icons/svg/1352/1352938.svg`
-const solar = `https://image.flaticon.com/icons/svg/649/649853.svg`
 
 export default class Landing extends React.Component {
   render() {
@@ -14,12 +14,12 @@ export default class Landing extends React.Component {
       <Parallax ref={ref => (this.parallax = ref)} pages={2} style={{ backgroundColor: '#BAE1EB' }}>
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#BAE1EB' }} />
 
-        <ParallaxLayer offset={0.15} speed={-0.3} style={{ pointerEvents: 'none' }}>
-          <img src={balloon} style={{ width: '15%', marginLeft: '70%' }} />
+        <ParallaxLayer offset={-0.70} speed={-0.99} style={{ pointerEvents: 'none' }}>
+          <img className="small-el" src={elSmall} style={{ width: '15%', marginLeft: '31.3%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.05} speed={-0.9} style={{ pointerEvents: 'none' }}>
-          <img src={sun} style={{ width: '15%', marginLeft: '10%' }} />
+          <img src={sun} style={{ width: '10%', marginLeft: '10%' }} />
         </ParallaxLayer>
         
         <ParallaxLayer offset={0.1} speed={.8} style={{ opacity: 0.3 }}>
@@ -48,25 +48,25 @@ export default class Landing extends React.Component {
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.2} speed={0.4} style={{ opacity: 0.6 }}>
+        <ParallaxLayer offset={1.2} speed={0.4} style={{ opacity: 0.2 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.55} speed={-0.99} style={{ pointerEvents: 'none', zIndex: '2' }}>
+        <ParallaxLayer offset={1.20} speed={-0.99} style={{ pointerEvents: 'none', zIndex: '2' }}>
           <img src={hills} style={{ width: '100%'}} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.55} speed={-0.99} style={{ pointerEvents: 'none'}}>
-          <img src={solar} style={{ width: '5%', marginLeft: '18%' }} />
+        <ParallaxLayer offset={-0.93} speed={-0.99} style={{ pointerEvents: 'none'}}>
+          <img className="big-el" src={elBig} style={{ width: '18%', marginLeft: '55.2%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.55} speed={-0.99} style={{ pointerEvents: 'none'}}>
-          <img src={house} style={{ width: '17%', marginLeft: '18%' }} />
+        <ParallaxLayer offset={1.25} speed={-0.99} style={{ pointerEvents: 'none'}}>
+          <img src={second} style={{ width: '73%', marginLeft: '25%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={-0.04}
+          offset={-0.08}
           speed={0.1}
           onClick={() => this.parallax.scrollTo(1)}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
@@ -108,3 +108,4 @@ export default class Landing extends React.Component {
     )
   }
 }
+
