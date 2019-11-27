@@ -222,6 +222,7 @@ Challenge.create(
                     description: 'Reduce the bill in the month $5', 
                     points: 10, 
                     tips: [t10,t18,t26],
+                    verification_method: "last_bill_5_dollars_less?"
                 )
 Challenge.create(   
                     title: 'Energy Chicken', 
