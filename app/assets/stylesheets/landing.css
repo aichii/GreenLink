@@ -79,3 +79,12 @@ main {
 .textWrapper h1 {
   font-weight: 700;
 }
+
+.small-el,
+.big-el {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin { 
+  100% { transform: rotate(360deg) } 
+}
