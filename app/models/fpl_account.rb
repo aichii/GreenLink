@@ -24,7 +24,7 @@ class FplAccount < ApplicationRecord
       zipcode:            zipcode,
       user_email:         user.email,
       points:             user.points,
-      avatar:             user.profile&.avatar ? url_for(user.profile.avatar) : ''
+      avatar:             user.profile&.avatar ? url_for(user.profile.avatar) : 'https://i.pravatar.cc/300'
     }
   end
 end
