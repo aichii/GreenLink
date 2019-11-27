@@ -221,7 +221,7 @@ Challenge.create(
                     title: 'Rock the Bulb', 
                     description: 'Reduce the bill in the month $5', 
                     points: 10, 
-                    tips: [t10,t18,t26]
+                    tips: [t10,t18,t26],
                 )
 Challenge.create(   
                     title: 'Energy Chicken', 
