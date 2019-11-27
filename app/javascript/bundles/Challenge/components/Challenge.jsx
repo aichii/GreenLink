@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import styles from './challenge.module.css'
-import CustomStyleModal from './modal.module.css'
 import Modal from 'react-modal';
 
 export default class Challenge extends Component {
@@ -49,39 +47,39 @@ export default class Challenge extends Component {
         const { challenges, challengeSelect } = this.state
         return(
             <div>
-                <div className={styles.wrapperChallenge}>
+                <div className="wrapperChallenge">
                     <h1>Challenges</h1>
                     <hr></hr>
-                    <div className={styles.containerChallenge}>
-                        <div className={styles.wrapperAllChallenge}>
+                    <div className="containerChallenge">
+                        <div className="wrapperAllChallenge">
                         <h2>Big Challenges</h2>
-                            <div className={styles.bigChallenges}>
+                            <div className="bigChallenges">
                             {   
                                 challenges.map((theChallenge, i) => {
                                     if(theChallenge.points >= 99){
                                         return( 
                                             <div
-                                            className={styles.biger}
+                                            className="biger"
                                             key={i}
                                             id={i}
                                             onClick={() => this.openModal(i)}
                                             >
-                                                <div className={styles.upSmallWrapper}>
+                                                <div className="upSmallWrapper">
                                                     <span>Points: {theChallenge.points}</span>
-                                                    <div className={styles.referencesIcon}>
+                                                    <div className="referencesIcon">
                                                         {this.state.icons[i]}
                                                     </div>
                                                 </div>
-                                                <div className={styles.theTitle}>
+                                                <div className="theTitle">
                                                     <span>{theChallenge.title}</span>
                                                 </div>
-                                                <div className={styles.smallBottom}>
+                                                <div className="smallBottom">
                                                     <button 
                                                     onClick={() => this.openModal(i)}
                                                     >
                                                         Tips and Docs
                                                     </button>
-                                                    <div className={styles.beautyCircle}></div>
+                                                    <div className="beautyCircle"></div>
                                                 </div>
                                             </div>
                                         )
@@ -90,29 +88,29 @@ export default class Challenge extends Component {
                             }
                             </div>
                         </div>
-                        <div className={styles.wrapperAllChallenge}>
+                        <div className="wrapperAllChallenge">
                         <h2>Monthly Challenges</h2>
-                            <div className={styles.regularChallenges}>
+                            <div className="regularChallenges">
                                 {
                                     challenges.map((theChallenge, i) => {
                                         if(theChallenge.points < 99){
                                             return(
                                                 <div
-                                                className={styles.regular}
+                                                className="regular"
                                                 key={i}
                                                 id={i}
                                                 onClick={() => this.openModal(i)}
                                                 >
-                                                    <div className={styles.smallWrapper}>
+                                                    <div className="smallWrapper">
                                                         <span>Points: {theChallenge.points}</span>
-                                                        <div className={styles.referencesIcon}>
+                                                        <div className="referencesIcon">
                                                             {this.state.icons[i]}
                                                         </div>
                                                     </div>
-                                                    <div className={styles.theTitle}>
+                                                    <div className="theTitle">
                                                         <span>{theChallenge.title}</span>
                                                     </div>
-                                                    <div className={styles.smallBottom}>
+                                                    <div className="smallBottom">
                                                         <button 
                                                         onClick={() => this.openModal(i)}
                                                         key={i}
@@ -120,7 +118,7 @@ export default class Challenge extends Component {
                                                         >
                                                             Tips and Docs
                                                         </button>
-                                                        <div className={styles.beautyCircle}></div>
+                                                        <div className="beautyCircle"></div>
                                                     </div>
                                                 </div>
                                             )
@@ -134,34 +132,33 @@ export default class Challenge extends Component {
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.afterOpenModal}
                         onRequestClose={this.closeModal}
-                        style={CustomStyleModal}
-                        className={CustomStyleModal.Modal}
-                        overlayClassName={CustomStyleModal.Overlay}
+                        className="Modal"
+                        overlayClassName="Overlay"
                         contentLabel="GREENLINK"
                         ariaHideApp={false}
                     >
-                        <div className={CustomStyleModal.contentModal}>
+                        <div className="contentModal">
                         <div onClick={this.closeModal}><i className="fas fa-times"></i></div>
-                            <div className={CustomStyleModal.descriptionChallenge}>
+                            <div className="descriptionChallenge">
                                 <div
                                     id={challengeSelect.id}
-                                    className={CustomStyleModal.bodyChallenge}
+                                    className="bodyChallenge"
                                 >
                                     <h2>{challengeSelect.title}</h2>
                                     <p>{challengeSelect.description}</p>
                                 </div>
-                                <div className={CustomStyleModal.tipsForChallenge}>
+                                <div className="tipsForChallenge">
                                     {
                                         challengeSelect.tips.map((eachTip, i) => (
                                             <div
                                             key={i}
                                             id={i}
-                                            className={CustomStyleModal.wrapperTips}
+                                            className="wrapperTips"
                                             >
-                                                <div className={CustomStyleModal.numberTips}>
+                                                <div className="numberTips">
                                                     <h3>0{i + 1} <span> / 0{challengeSelect.tips.length}</span></h3>
                                                 </div>
-                                                <div className={CustomStyleModal.bodyTips}>
+                                                <div className="bodyTips">
                                                     <span>{eachTip.title}</span><br></br>
                                                     <span>Type: {eachTip.type_id}</span>
                                                     <p>{eachTip.description}</p>
