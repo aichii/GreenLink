@@ -12,10 +12,14 @@ class FplAccount < ApplicationRecord
 
   default_scope { includes(user: :profile) }
 
-  scope :points_sorted,   -> { sort("points: DESC") }
+  scope :limit_users,   -> { limit(2) }
 
   def scrape_for_bills
     BillScrapeJob.perform_later(self)
+  end
+
+  def self.points_sorted 
+    FplAccount.all.sort { |a, b| a.user.points <=> a.user.points }
   end
 
   def as_json(options={})

@@ -6,7 +6,7 @@ class LeaderboardController < ApplicationController
       format.html
       format.json do
         if current_user.fpl_account
-          all_accounts = FplAccount.all
+          all_accounts = FplAccount.points_sorted
         else 
           all_accounts = []
         end

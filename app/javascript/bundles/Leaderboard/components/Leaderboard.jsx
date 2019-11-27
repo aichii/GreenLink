@@ -3,7 +3,8 @@ import axios from 'axios'
 
 export default class Leaderboard extends React.Component {
   state={
-    users: []
+    users: [],
+    current_user: (this.props.current_user)
   }
 
   fetchAllUsers = () => {
@@ -11,8 +12,22 @@ export default class Leaderboard extends React.Component {
     .then(res => this.setState({ users: res.data }))
   }
 
+  sortUsers = (a , b) => {
+    const userA = a.points;
+    const userB = b.points;
+  
+    let comparison = 0;
+    if (userA > userB) {
+      comparison = 1;
+    } else if (userA < userB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+
   render() {
     let rank = 4
+    console.log(this.state.current_user)
     return (
       <main id="leaderboard-main">
         <div className="rank-container">
@@ -81,7 +96,7 @@ export default class Leaderboard extends React.Component {
                       <h3>
                         {user.zipcode}
                       </h3>
-                      <h2>PTS</h2>
+                      <h2>{user.points}</h2>
                     </div>
                   )
                 }
