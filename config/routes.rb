@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   resources :challenges, only: [:index]
   resources :tips, only: [:index]
   resources :bills, only: [:index]
+
+  if Rails.env.production?
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
