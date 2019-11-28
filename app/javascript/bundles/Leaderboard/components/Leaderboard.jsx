@@ -18,15 +18,13 @@ export default class Leaderboard extends React.Component {
     })
   }
 
-  // checkZipcode = () => {
-  //   this.state.users.map( user => {
-  //     if (user.id === this.state.current_user.id){
-  //       this.setState({currentZip: user.zipcode})
-  //     }else{
-  //       console.log("it broke")
-  //     } 
-  //   })
-  // }
+  checkZipcode = () => {
+    this.state.users.map( user => {
+      if (user.id === this.state.current_user.id){
+        this.setState({currentZip: user.zipcode})
+      } 
+    })
+  }
 
   render() {
     const { users, current_user, userIndex, currentZip } = this.state
@@ -158,5 +156,6 @@ export default class Leaderboard extends React.Component {
 
   componentDidMount(){
     this.fetchAllUsers()
+    this.checkZipcode()
   }
 }
