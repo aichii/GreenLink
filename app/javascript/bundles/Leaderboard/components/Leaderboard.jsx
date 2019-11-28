@@ -4,9 +4,7 @@ import axios from 'axios'
 export default class Leaderboard extends React.Component {
   state={
     users: [],
-    current_user: (this.props.current_user),
     userIndex: null,
-    currentZip: 33024
   }
 
   fetchAllUsers = () => {
@@ -18,17 +16,31 @@ export default class Leaderboard extends React.Component {
     })
   }
 
-  checkZipcode = () => {
-    this.state.users.map( user => {
-      if (user.id === this.state.current_user.id){
-        this.setState({currentZip: user.zipcode})
-      } 
-    })
+  currentUserCard = () => {
+    const {  userIndex } = this.state;
+    const { current_user } = this.props;
+    return (
+      <div className="rank-user-box" key={current_user.id}>
+      <div>Image</div>
+      <h1>{userIndex}</h1>
+      <h4>
+        {current_user.email}
+      </h4>
+      <h3>
+        {current_user.zipcode}
+      </h3>
+      <h2>
+        {current_user.points}
+      </h2>
+    </div>
+    )
   }
 
   render() {
-    const { users, current_user, userIndex, currentZip } = this.state
+    const { users, userIndex } = this.state
+    const { current_user } = this.props;
     let rank = 4
+    let rank2 = 4
     return (
       <main id="leaderboard-main">
         <div className="rank-container">
@@ -47,14 +59,16 @@ export default class Leaderboard extends React.Component {
           </div>
           <div className="rank-box">
             {
-              users.map((user, i ) =>{
-                if (i < 5){
-                  return(
+              [...users.slice(0, 5).reduce((acc, user) =>
+                {
+                  const isCurrentUser = user.id === current_user.id
+                  if (isCurrentUser || acc.length >= 4) return acc;
+                  acc.push(
                     <div className="rank-user-box" key={user.id}>
                       <div>Image</div>
-                      <h1>{rank++}</h1>
+                      <h1>{isCurrentUser ? userIndex : rank++}</h1>
                       <h4>
-                        {user.user_email}
+                        {user.user_email || user.email}
                       </h4>
                       <h3>
                         {user.zipcode}
@@ -64,29 +78,8 @@ export default class Leaderboard extends React.Component {
                       </h2>
                     </div>
                   )
-                }
-              })
-            }
-            {
-              users.map((user, i ) =>{
-                if (current_user.id === user.id){
-                  return(
-                    <div className="rank-user-box" key={user.id}>
-                      <div>Image</div>
-                      <h1>{userIndex}</h1>
-                      <h4>
-                        {user.user_email}
-                      </h4>
-                      <h3>
-                        {user.zipcode}
-                      </h3>
-                      <h2>
-                        {user.points}
-                      </h2>
-                    </div>
-                  )
-                }
-              })
+                  return acc;
+                }, []), this.currentUserCard()]
             }
           </div>
         </div>
@@ -105,48 +98,26 @@ export default class Leaderboard extends React.Component {
             </div>
           </div>
           <div className="rank-box">
-            {
-              users.filter(user => {
-                return currentZip === user.zipcode
-              })
-              .map((user, i ) =>{
-                if (i < 5){
-                  return(
-                    <div className="rank-user-box" key={user.id}>
-                      <div>Image</div>
-                      <h1>{rank++}</h1>
-                      <h4>
-                        {user.user_email}
-                      </h4>
-                      <h3>
-                        {user.zipcode}
-                      </h3>
-                      <h2>{user.points}</h2>
-                    </div>
-                  )
-                }
-              })
-            }
-            {
-              users.map((user, i ) =>{
-                if (current_user.id === user.id){
-                  return(
-                    <div className="rank-user-box" key={user.id}>
-                      <div>Image</div>
-                      <h1>{userIndex}</h1>
-                      <h4>
-                        {user.user_email}
-                      </h4>
-                      <h3>
-                        {user.zipcode}
-                      </h3>
-                      <h2>
-                        {user.points}
-                      </h2>
-                    </div>
-                  )
-                }
-              })
+            {[...users.reduce((acc, user) => {
+              if (user.zipcode !== current_user.zipcode) return acc;
+              const isCurrentUser = user.id === current_user.id
+              if (acc.length >= 4 || isCurrentUser) return acc;
+              const Fragment = (
+                <div className="rank-user-box" key={user.id}>
+                <div>Image</div>
+                <h1>{rank2++}</h1>
+                <h4>
+                  {user.user_email}
+                </h4>
+                <h3>
+                  {user.zipcode}
+                </h3>
+                <h2>{user.points}</h2>
+              </div>
+              )
+              acc.push(Fragment)
+              return acc;
+            }, []), this.currentUserCard()]
             }
           </div>
         </div>
@@ -156,6 +127,5 @@ export default class Leaderboard extends React.Component {
 
   componentDidMount(){
     this.fetchAllUsers()
-    this.checkZipcode()
   }
 }
