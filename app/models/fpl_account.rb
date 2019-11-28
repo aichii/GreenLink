@@ -13,13 +13,14 @@ class FplAccount < ApplicationRecord
   default_scope { includes(user: :profile) }
 
   scope :limit_users,   -> { limit(2) }
+  # scopre :sort_by_zip   -> { where(zipcope: current_user.fpl_account.zipcode)}
 
   def scrape_for_bills
     BillScrapeJob.perform_later(self)
   end
 
   def self.points_sorted 
-    FplAccount.all.sort { |a, b| a.user.points <=> a.user.points }
+    FplAccount.all.sort_by { |acc| acc.user.points * -1 }
   end
 
   def as_json(options={})

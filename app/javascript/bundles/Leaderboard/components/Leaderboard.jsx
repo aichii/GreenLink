@@ -4,30 +4,33 @@ import axios from 'axios'
 export default class Leaderboard extends React.Component {
   state={
     users: [],
-    current_user: (this.props.current_user)
+    current_user: (this.props.current_user),
+    userIndex: null,
+    currentZip: 33024
   }
 
   fetchAllUsers = () => {
+    const { current_user } = this.props;
     axios.get(`/leaderboard.json`)
-    .then(res => this.setState({ users: res.data }))
+    .then(({ data }) => {
+      const currentUserIndex = data.findIndex(({ id }) => id === current_user.id) 
+      this.setState({ users: data, userIndex: currentUserIndex })
+    })
   }
 
-  sortUsers = (a , b) => {
-    const userA = a.points;
-    const userB = b.points;
-  
-    let comparison = 0;
-    if (userA > userB) {
-      comparison = 1;
-    } else if (userA < userB) {
-      comparison = -1;
-    }
-    return comparison;
-  }
+  // checkZipcode = () => {
+  //   this.state.users.map( user => {
+  //     if (user.id === this.state.current_user.id){
+  //       this.setState({currentZip: user.zipcode})
+  //     }else{
+  //       console.log("it broke")
+  //     } 
+  //   })
+  // }
 
   render() {
+    const { users, current_user, userIndex, currentZip } = this.state
     let rank = 4
-    console.log(this.state.current_user)
     return (
       <main id="leaderboard-main">
         <div className="rank-container">
@@ -46,7 +49,7 @@ export default class Leaderboard extends React.Component {
           </div>
           <div className="rank-box">
             {
-              this.state.users.map((user, i ) =>{
+              users.map((user, i ) =>{
                 if (i < 5){
                   return(
                     <div className="rank-user-box" key={user.id}>
@@ -66,12 +69,33 @@ export default class Leaderboard extends React.Component {
                 }
               })
             }
+            {
+              users.map((user, i ) =>{
+                if (current_user.id === user.id){
+                  return(
+                    <div className="rank-user-box" key={user.id}>
+                      <div>Image</div>
+                      <h1>{userIndex}</h1>
+                      <h4>
+                        {user.user_email}
+                      </h4>
+                      <h3>
+                        {user.zipcode}
+                      </h3>
+                      <h2>
+                        {user.points}
+                      </h2>
+                    </div>
+                  )
+                }
+              })
+            }
           </div>
         </div>
         <div className="rank-container">
           <div className="rank-header">
             <h1 className="leaderboard-title">
-              My Network Rank
+              My Zipcode Rank
             </h1>
             <div className="rank-group">
               <h2>02</h2>
@@ -84,7 +108,10 @@ export default class Leaderboard extends React.Component {
           </div>
           <div className="rank-box">
             {
-              this.state.users.map((user, i ) =>{
+              users.filter(user => {
+                return currentZip === user.zipcode
+              })
+              .map((user, i ) =>{
                 if (i < 5){
                   return(
                     <div className="rank-user-box" key={user.id}>
@@ -102,7 +129,27 @@ export default class Leaderboard extends React.Component {
                 }
               })
             }
-            
+            {
+              users.map((user, i ) =>{
+                if (current_user.id === user.id){
+                  return(
+                    <div className="rank-user-box" key={user.id}>
+                      <div>Image</div>
+                      <h1>{userIndex}</h1>
+                      <h4>
+                        {user.user_email}
+                      </h4>
+                      <h3>
+                        {user.zipcode}
+                      </h3>
+                      <h2>
+                        {user.points}
+                      </h2>
+                    </div>
+                  )
+                }
+              })
+            }
           </div>
         </div>
       </main>
