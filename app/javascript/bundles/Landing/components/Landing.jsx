@@ -53,7 +53,7 @@ export default class Landing extends React.Component {
           <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.20} speed={-0.99} style={{ pointerEvents: 'none', zIndex: '2' }}>
+        <ParallaxLayer offset={1.20} speed={-0.99} style={{ pointerEvents: 'none', zIndex: '2'}}>
           <img src={hills} style={{ width: '100%'}} />
         </ParallaxLayer>
 
