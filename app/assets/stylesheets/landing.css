@@ -116,3 +116,59 @@ main {
   color: #ffffff;
   text-transform: uppercase;
 }
+
+@media (max-device-width:1367px) {
+  .big-el{
+    margin-top: 20px;  
+  }
+}
+
+@media (max-device-width:1024px) {
+  .nav-container {
+    width: 90%;
+    white-space: nowrap;
+  }
+
+  .nav-pages {
+    width: 60%;
+  }
+  
+  .small-el {
+    margin-top: -30px;
+  }
+
+  .big-el{
+    margin-top: 170px;  
+  }
+}
+
+@media (max-device-width:768px) {
+  .small-el {
+    margin-top: -27px;
+  }
+
+  .big-el{
+    margin-top: 165px;  
+  }
+}
+
+@media (max-device-width:450px) {
+
+  .small-el {
+    margin-top: -40px;
+  }
+
+  .big-el{
+    margin-top: 250px;  
+  }
+}
+
+  @media (max-device-width:375px) {
+    .small-el {
+      margin-top: -50px;
+    }
+
+    .big-el{
+      margin-top: 330px;  
+    }
+}

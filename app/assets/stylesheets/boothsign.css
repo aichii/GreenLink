@@ -216,3 +216,15 @@
     height: 40px;
     width: 40px;
 }
+
+@media (max-device-width:450px) {
+    .container {
+        position: absolute;
+        top: 0;
+        height: 60vh;
+        transition: all 0.6s ease-in-out;
+    }
+    .big-container {
+        height: 60vh;
+    }
+  }
