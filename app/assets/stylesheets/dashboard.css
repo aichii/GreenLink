@@ -46,3 +46,23 @@
     height: 100vh;
     background-color: blueviolet;
 }
+
+@media (max-device-width:1024px) {
+    .containerSecondaryDashboard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+    
+    .wrapperSecondaryChart {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+        height: auto;
+        margin: 25px;
+    }
+
+  }

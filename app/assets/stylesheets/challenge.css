@@ -58,14 +58,13 @@
 .regular {
     width: 23%;
     height: 300px;
-    margin: 15px 10px 10px 10px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
     animation-duration: 1s;
-
 }
 
 .regular:hover, 
@@ -126,4 +125,21 @@
     width: 90%;
     height: auto;
     margin-top: -25px
+}
+
+.wrapper-page {
+  margin-left: 100px;
+}
+
+@media (max-device-width:1024px) {
+    .wrapperChallenge{
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .regular {
+        width: 31%;
+        height: 300px;
+    }
+    
 }

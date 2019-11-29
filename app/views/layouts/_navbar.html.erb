@@ -14,6 +14,11 @@
     </div>
   </nav>
 <% elsif user_signed_in? %>
+  <div class="toggle-to-nav" onclick="show()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <nav class="navbar">
     <% if current_user.profile %>
       <%= image_tag current_user.profile.avatar.variant(resize_to_limit: [200, 200]),
@@ -48,3 +53,9 @@
     </div>  
   </nav>
 <% end %>
+
+<script>
+  function show(){
+    document.querySelector(".navbar").classList.toggle('active')
+  }
+</script>

@@ -5,8 +5,6 @@
     right: 400px;
     bottom: 150px;
     background-color: #ffffff;
-    background-size: cover;
-    background-position: center;
   }
 
 .Overlay {
@@ -87,4 +85,26 @@
   padding: 5px;
   margin: 3px 0 0 0;
   background-color: rgba(11, 116, 11, 1);
+}
+
+@media (max-device-width:1367px) {
+  .Modal {
+    position: fixed;
+    top: 50px;
+    left: 100px;
+    right: 100px;
+    bottom: 50px;
+    background-color: #ffffff;
+  }
+}
+
+@media (max-device-width:1024px) {
+  .Modal {
+    position: fixed;
+    top: 310px;
+    left: 100px;
+    right: 100px;
+    bottom: 310px;
+    background-color: #ffffff;
+  }
 }

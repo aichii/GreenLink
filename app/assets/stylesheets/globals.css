@@ -34,3 +34,13 @@ a {
   font-weight: 500; 
   font-size: 35px;
 }
+
+@media (max-device-width:1024px) {
+  .wrapper-page {
+    margin-left: 0;
+  }
+
+  .first-big-title {
+    margin-left: 70px;
+  }
+}

@@ -33,7 +33,7 @@ export default class Network extends React.Component{
         return(
             <>
             <div>
-                <h1>My Network Zipcode</h1>
+                <h1 className="first-big-title">My Network Zipcode</h1>
                 <hr></hr>
             </div>
             <div className="big-wrapper-network">     

@@ -155,16 +155,16 @@ export default class Dashboard extends Component {
     render(){
     if (this.state.loading) 
     return(
-        <div class="loading">
+        <div className="loading">
             <h2>LOADING</h2>
-            <div class="obj"></div>
-            <div class="obj"></div>
-            <div class="obj"></div>
-            <div class="obj"></div>
-            <div class="obj"></div>
-            <div class="obj"></div>
-            <div class="obj"></div>
-            <div class="obj"></div>
+            <div className="obj"></div>
+            <div className="obj"></div>
+            <div className="obj"></div>
+            <div className="obj"></div>
+            <div className="obj"></div>
+            <div className="obj"></div>
+            <div className="obj"></div>
+            <div className="obj"></div>
         </div>
     )
     return(

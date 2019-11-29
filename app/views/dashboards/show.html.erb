@@ -1,5 +1,5 @@
 <div class="wrapper-page">
-  <h1>Welcome, <%= current_user.email %></h1>
+  <h1  class="first-big-title">Welcome, <%= current_user.email %></h1>
   <hr>
   <% if current_user.fpl_account %>
     <%= react_component 'Dashboard' %>
