@@ -98,7 +98,7 @@
   }
 }
 
-@media (max-device-width:1024px) {
+@media screen and (max-device-width:1024px) {
   .Modal {
     position: fixed;
     top: 310px;
@@ -149,7 +149,7 @@
   }
 }
 
-@media (max-device-width: 375px ){
+@media screen and (max-device-width: 375px ){
   .Modal {
     position: fixed;
     top: 400px;
