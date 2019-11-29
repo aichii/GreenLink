@@ -126,70 +126,36 @@ main {
 }
 
 @media (max-device-width:1367px) {
-  .big-el{
-    margin-top: 20px;  
+  .hills-landign {
+    width: 50vw;
   }
 }
 
 @media (max-device-width:1026px) {
-  .nav-container {
-    width: 90%;
-    white-space: nowrap;
-  }
-
- 
-
-  .first-img-parallax {
-    position: fixed;
-    bottom: 10px;
-  }
-
-  .second-img-parallax{
-    position: fixed;
-    bottom: 112px;
-  }
-
-  .nav-pages {
-    width: 60%;
-  }
-
-  .small-el {
-    margin-top: 220px;
-  }
-
-  .big-el{
-    margin-top: 300px;  
+  .hills-landign {
+    width: 40vw;
+    height: 70vh;
   }
 }
 
 @media (max-device-width:768px) {
-  .small-el {
-    margin-top: -27px;
-  }
-
-  .big-el{
-    margin-top: 165px;  
+  .hills-landign {
+    width: 40vw;
+    height: 70vh;
   }
 }
 
 @media (max-device-width:450px) {
-
-  .small-el {
-    margin-top: -40px;
-  }
-
-  .big-el{
-    margin-top: 250px;  
+  .hills-landign {
+    width: 40vw;
+    height: 50vh;
   }
 }
 
 @media (max-device-width:375px) {
-  .small-el {
-    margin-top: -45px;
-  }
-
-  .big-el{
-    margin-top: 200px;  
+  .hills-landign {
+    width: 40vw;
+    height: 40vh;
   }
 }
 
