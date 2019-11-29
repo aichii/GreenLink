@@ -54,7 +54,7 @@ export default class Landing extends React.Component {
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.20} speed={-0.99} style={{ pointerEvents: 'none', zIndex: '2'}}>
-          <img src={hills} style={{ width: '100%'}} />
+          <img src={hills} style={{ width: '100%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={-0.93} speed={-0.99} style={{ pointerEvents: 'none'}}>
