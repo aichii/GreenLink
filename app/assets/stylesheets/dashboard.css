@@ -47,7 +47,7 @@
     background-color: blueviolet;
 }
 
-@media (max-device-width:1024px) {
+@media(min-width: 550px) and (max-device-width:1024px) {
     .containerSecondaryDashboard {
         display: flex;
         justify-content: center;
@@ -65,4 +65,10 @@
         margin: 25px;
     }
 
-  }
+    .mainChartContainer {
+        margin: 10px 0 10px 0;
+        width: 93%;
+    }
+}
+
+

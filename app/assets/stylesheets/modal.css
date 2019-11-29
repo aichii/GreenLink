@@ -108,3 +108,13 @@
     background-color: #ffffff;
   }
 }
+
+@media (max-device-width: 549px ){
+  .Modal {
+    position: fixed;
+    top: 400px;
+    left: 50px;
+    right: 50px;
+    bottom: 400px;
+  }
+}

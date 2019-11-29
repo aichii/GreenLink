@@ -94,3 +94,9 @@
         width: 32%;
   }
 }
+
+@media (max-device-width: 549px ){
+    .person-profile {
+        width: 45%;
+    }
+}
