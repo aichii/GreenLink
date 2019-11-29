@@ -16,24 +16,23 @@
   height: 60px;
   border-radius: 100%;
   background-color: black;
-  margin-bottom: 20px;
-  position: relative;
-  top: -35px;
 }
 
 .container-nav {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 400px;
+  height: 600px;
   width: 100%;
   position: relative;
   bottom: 40px;
 }
 
-.fas {
+.fas , 
+.fas.fa-users {
   color: #ffffff;
   font-size: 25px;
+  margin: 0;
 }
 
 .user-account {
@@ -86,7 +85,7 @@
 .fa-hand-holding-usd,
 .fa-comment-dollar,
 .fa-temperature-high,
-.fa-users,
+.fa-user-friends,
 .fa-handshake,
 .fa-share-alt,
 .fa-history,

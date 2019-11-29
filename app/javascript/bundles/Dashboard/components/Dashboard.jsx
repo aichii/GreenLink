@@ -153,7 +153,7 @@ export default class Dashboard extends Component {
     datasetKeyProvider () {return Math.random (); } 
 
     render(){
-    if (this.state.loading) return <h1>Loading...</h1>
+    if (this.state.loading) return <div className="loading-page-to">Loading...</div>
     return(
         <>
         <div className="containerDashboard">

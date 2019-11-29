@@ -6,6 +6,7 @@
         <%= link_to "GREENLINK", root_path, :class => "link-to-home" %>
       </div>
       <div class="nav-pages">
+        <%= link_to( "About Us", about_us_url, method: :get ) %>
         <button class="create-account-btn">
           <%= link_to( "Get Instant Access", new_user_session_path, method: :get ) %>
         </button>        
@@ -32,6 +33,9 @@
         <%= link_to tips_url, class: "#{'active' if current_page?(tips_url)}" do %>
           <div class="wrapper-home"><i class="fas fa-lightbulb"></i></div>
         <% end %>
+        <%= link_to fpl_accounts_url, class: "#{'active' if current_page?(fpl_accounts_url)}" do %>
+          <div class="wrapper-home"><i class="fas fa-users"></i></div>
+        <% end %>        
       </div>
       <div class="user-account">  
         <%= link_to edit_user_registration_url, class: "#{'active' if current_page?(edit_user_registration_url)}" do %>

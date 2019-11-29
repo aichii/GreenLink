@@ -39,12 +39,12 @@ export default class Network extends React.Component{
             <div className="big-wrapper-network">     
                 <div className="status-neighborhood">
                     <div className="neighborhood-points">
-                        <i class="fab fa-font-awesome-flag"></i>
+                        <i className="fab fa-font-awesome-flag"></i>
                         Total Points: {this.state.totalPoints}
                     </div>
                     <h1>My Neighborhood</h1>
                     <div className="neighborhood-zipcode">
-                        <i class="fas fa-map-marked-alt"></i>
+                        <i className="fas fa-map-marked-alt"></i>
                         Network Zipcode: {this.state.zipcode}
                     </div>
                 </div>
