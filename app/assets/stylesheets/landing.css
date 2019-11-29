@@ -136,6 +136,16 @@ main {
     width: 40vw;
     height: 70vh;
   }
+
+  .nav-container {
+    width: 90%;
+    white-space: nowrap;
+  }
+
+  .nav-pages {
+    width: 60%;
+  }
+
 }
 
 @media (max-device-width:768px) {
