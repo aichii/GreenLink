@@ -143,3 +143,20 @@
     }
     
 }
+
+@media (max-device-width: 450px ){
+    .regular {
+        width: 48%;
+        margin-top: 25px;
+    }
+
+    .biger {
+        width: 48%;
+        margin-top: 25px;
+        height: 300px;
+    }
+
+    .bigChallenges {
+        flex-wrap: wrap;
+    }
+  }

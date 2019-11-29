@@ -71,4 +71,8 @@
     }
 }
 
-
+@media (max-device-width: 450px ){
+    .containerDashboard {
+        margin-top: 100px;
+    }
+}
