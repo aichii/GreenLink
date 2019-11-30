@@ -8,7 +8,7 @@ const sun = `https://image.flaticon.com/icons/svg/439/439842.svg`
 export default class Landing extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={2} style={{ backgroundColor: '#BAE1EB' }}>
+      <Parallax ref={ref => (this.parallax = ref)} pages={1.75} style={{ backgroundColor: '#BAE1EB' }}>
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#BAE1EB' }} />
 
         <ParallaxLayer offset={0.2} speed={-0.88} style={{ pointerEvents: 'none' }}>
@@ -46,7 +46,7 @@ export default class Landing extends React.Component {
           <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.20} speed={-0.99} style={{ justifyContent: 'center', display: 'flex', pointerEvents: 'none', zIndex: '2'}}>
+        <ParallaxLayer offset={1.35} speed={-0.99} style={{ justifyContent: 'center', display: 'flex', pointerEvents: 'none', zIndex: '2'}}>
           <img className="hills-landign" src={hills} style={{ width: '68vw' }} />
         </ParallaxLayer>
 
