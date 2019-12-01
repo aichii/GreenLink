@@ -16,7 +16,7 @@ export default class tips extends Component {
     const { tips } = this.state
     return(
       <>
-      <h1>Tips</h1>
+      <h1 className="first-big-title">Tips</h1>
       <hr></hr>
       <div className="wrapper-container-tips">
         <div className="container-alltips">

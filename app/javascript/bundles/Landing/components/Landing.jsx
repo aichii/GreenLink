@@ -1,9 +1,6 @@
 import React from 'react'
 import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
 import hills from './hills.png'
-import second from './second.png'
-import elSmall from './smallel.png'
-import elBig from './bigel.png'
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 const sun = `https://image.flaticon.com/icons/svg/439/439842.svg`
@@ -11,15 +8,11 @@ const sun = `https://image.flaticon.com/icons/svg/439/439842.svg`
 export default class Landing extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={2} style={{ backgroundColor: '#BAE1EB' }}>
+      <Parallax ref={ref => (this.parallax = ref)} pages={1.75} style={{ backgroundColor: '#BAE1EB' }}>
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#BAE1EB' }} />
 
-        <ParallaxLayer offset={-0.70} speed={-0.99} style={{ pointerEvents: 'none' }}>
-          <img className="small-el" src={elSmall} style={{ width: '15%', marginLeft: '31.3%' }} />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={0.1} speed={-0.9} style={{ pointerEvents: 'none' }}>
-          <img src={sun} style={{ width: '8%', marginLeft: '10%' }} />
+        <ParallaxLayer offset={0.2} speed={-0.88} style={{ pointerEvents: 'none' }}>
+          <img src={sun} style={{ width: '8%', marginLeft: '20%' }} />
         </ParallaxLayer>
         
         <ParallaxLayer offset={0.1} speed={.8} style={{ opacity: 0.3 }}>
@@ -53,16 +46,8 @@ export default class Landing extends React.Component {
           <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.20} speed={-0.99} style={{ pointerEvents: 'none', zIndex: '2' }}>
-          <img src={hills} style={{ width: '100%'}} />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={-0.93} speed={-0.99} style={{ pointerEvents: 'none'}}>
-          <img className="big-el" src={elBig} style={{ width: '18%', marginLeft: '55.2%' }} />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={1.25} speed={-0.99} style={{ pointerEvents: 'none'}}>
-          <img src={second} style={{ width: '73%', marginLeft: '25%' }} />
+        <ParallaxLayer offset={1.35} speed={-0.99} style={{ justifyContent: 'center', display: 'flex', pointerEvents: 'none', zIndex: '2'}}>
+          <img className="hills-landign" src={hills} style={{ width: '68vw' }} />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -86,21 +71,9 @@ export default class Landing extends React.Component {
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
         >
           <div className="textWrapper">
+            <h1>The Energy</h1>
             <h2>
-              What is typography? I do not know how to make this look good or know what should go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
-            </h2>
-          </div>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={1.1}
-          speed={-0}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '3' }}
-          onClick={() => this.parallax.scrollTo(0)}
-        >
-          <div className="textWrapper">
-            <h2>
-              What is typography? I do not know how to make this look good or know what should go here, but we can figure that out now. I'm too lazy to google some lorum ipsum, I'd rather just type some meaningless jargon I guess.  
+            Dirty energy pollutes our air and water, impacts our health, and contributes to climate change. Over the past 30 years, Toxics Action Center has helped communities all over the northeast retire dirty power plants responsibly, halt dangerous new fracked gas pipelines and win clean, local, renewable energy solutions.
             </h2>
           </div>
         </ParallaxLayer>

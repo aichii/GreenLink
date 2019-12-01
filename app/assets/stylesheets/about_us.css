@@ -125,8 +125,6 @@
   align-items: center;
 }
 
-
-
 .about-img {
   width: 50%;
   position: relative;
@@ -152,8 +150,6 @@
 	}
 }
 
-
-
 .effect-img .sun {
   position: absolute;
   top: 0px;
@@ -165,4 +161,10 @@
   width: 90%;
   top: 30px;
   left: 30px;
+}
+
+@media (max-device-width:450px) {
+  .container-header {
+    height: 40vh;
+  }
 }

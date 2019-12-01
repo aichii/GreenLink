@@ -1,5 +1,6 @@
 <div class="wrapper-page">
-  <h2 class="edit-user-header">Edit <%= resource_name.to_s.humanize %></h2>
+  <h1 class="first-big-title">Edit <%= resource_name.to_s.humanize %></h1>
+  <hr>
   <div class="profile-input">
     <% if current_user.profile %>
       <%= image_tag current_user.profile.avatar.variant(resize_to_limit: [200, 200]),
