@@ -1,0 +1,94 @@
+<main id="leaderboard-main">
+  <div class="rank-container">
+    <div class="rank-header"> 
+      <h1 class="leaderboard-title">
+        All Zipcode Rank
+      </h1>
+      <div class="rank-group">
+        <h2>02</h2>
+        <div class="rank-two-img">Image</div>
+        <h1>01</h1>
+        <div class="rank-one-img">Image</div>
+        <h3>03</h3>
+        <div class="rank-three-img">Image</div>
+      </div>
+    </div>
+    <div class="rank-box">
+      <% rank = 3 %>
+      <% @all_users.each  do |user| %>
+        <div class="rank-user-box">
+          <div>Image</div>
+          <h1><%= rank = rank += 1%></h1>
+          <h4>
+            <%= user.email %>
+          </h4>
+          <h3>
+            <%= user.fpl_account.zipcode %>
+          </h3>
+          <h2>
+            <%= user.points %>
+          </h2>
+        </div>
+      <% end %>
+      <div class="rank-user-box">
+        <div>Image</div>
+        <h1>55</h1>
+        <h4>
+          <%= current_user.email %>
+        </h4>
+        <h3>
+          <%= current_user.fpl_account.zipcode %>
+        </h3>
+        <h2>
+          <%= current_user.points %>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="rank-container">
+    <div class="rank-header">
+      <h1 class="leaderboard-title">
+        My Network Rank
+      </h1>
+      <div class="rank-group">
+        <h2>02</h2>
+        <div class="rank-two-img">Image</div>
+        <h1>01</h1>
+        <div class="rank-one-img">Image</div>
+        <h3>03</h3>
+        <div class="rank-three-img">Image</div>
+      </div>
+    </div>
+    <div class="rank-box">
+      <% rank = 3 %>
+      <% @all_users.each  do |user| %>
+        <div class="rank-user-box">
+          <div>Image</div>
+          <h1><%= rank = rank += 1%></h1>
+          <h4>
+            <%= user.email %>
+          </h4>
+          <h3>
+            <%= user.fpl_account.zipcode %>
+          </h3>
+          <h2>
+            <%= user.points %>
+          </h2>
+        </div>
+      <% end %>
+      <div class="rank-user-box">
+        <div>Image</div>
+        <h1>55</h1>
+        <h4>
+          <%= current_user.email %>
+        </h4>
+        <h3>
+          <%= current_user.fpl_account.zipcode %>
+        </h3>
+        <h2>
+          <%= current_user.points %>
+        </h2>
+      </div>
+    </div>
+  </div>
+</main>
