@@ -56,6 +56,8 @@ export default class Leaderboard extends React.Component {
             {
               [...users.slice(0, 6).reduce((acc, user) =>
                 {
+                  const email = user.user_email
+                  const defEmail = email.substring(0, email.lastIndexOf("@"))
                   const isCurrentUser = user.id === current_user.id
                   if (isCurrentUser || acc.length >= 6) return acc;
                   acc.push(
@@ -65,12 +67,12 @@ export default class Leaderboard extends React.Component {
                       </div>
                       <h1>{isCurrentUser ? userIndex : rank++}</h1>
                       <h4>
-                        {user.user_email || user.email}
+                        {defEmail}
                       </h4>
                       <h3>
                         {user.zipcode}
                       </h3>
-                      <h2>
+                      <h2 className="leader-points">
                         {user.points}
                       </h2>
                     </div>
@@ -89,6 +91,8 @@ export default class Leaderboard extends React.Component {
           </div>
           <div className="rank-box">
             {[...users.reduce((acc, user) => {
+              const email = user.user_email
+              const defEmail = email.substring(0, email.lastIndexOf("@"))
               if (user.zipcode !== current_user.zipcode) return acc;
               const isCurrentUser = user.id === current_user.id
               if (acc.length >= 6 || isCurrentUser) return acc;
@@ -99,12 +103,14 @@ export default class Leaderboard extends React.Component {
                 </div>
                 <h1>{rank2++}</h1>
                 <h4>
-                  {user.user_email}
+                  {defEmail}
                 </h4>
                 <h3>
                   {user.zipcode}
                 </h3>
-                <h2>{user.points}</h2>
+                <h2 className="leader-points">
+                  {user.points}
+                </h2>
               </div>
               )
               acc.push(Fragment)

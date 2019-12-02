@@ -52,6 +52,8 @@ export default class Network extends React.Component{
                     <div className="network-wrapper">
                         {
                             this.state.myNetwork.map((person, i) => {
+                                const email = person.user_email
+                                const defEmail = email.substring(0, email.lastIndexOf("@"))
                                 return(
                                     <div
                                     className="person-profile"
@@ -63,7 +65,7 @@ export default class Network extends React.Component{
                                         </div>
                                         <div>
                                             <p className="person-points"> Points: {person.points}</p>                        
-                                            <p>{person.user_email}</p>
+                                            <p>{defEmail}</p>
                                         </div>
                                     </div>
                                 )
