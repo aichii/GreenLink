@@ -20,14 +20,14 @@
     <span></span>
   </div>
   <nav class="navbar">
-    <% if current_user.profile %>
+    <div class="container-nav">
+      <% if current_user.profile %>
       <%= image_tag current_user.profile.avatar.variant(resize_to_limit: [200, 200]),
                       style: "border-radius: 100%; object-fit: cover; margin-bottom: 20px",
                       width: 64, height: 64 %>
-    <% else %>
+      <% else %>
       <div class="container-img"></div>
-    <% end %>
-    <div class="container-nav">
+      <% end %>
       <div class="user-profile"> 
         <%= link_to root_url, class: "#{'active' if current_page?(dashboard_url)}" do %>
           <div class="wrapper-home"><i class="fas fa-home"></i></div>
@@ -40,7 +40,10 @@
         <% end %>
         <%= link_to fpl_accounts_url, class: "#{'active' if current_page?(fpl_accounts_url)}" do %>
           <div class="wrapper-home"><i class="fas fa-users"></i></div>
-        <% end %>        
+        <% end %>
+        <%= link_to leaderboard_index_url, class: "#{'active' if current_page?(leaderboard_index_url)}" do %>
+          <div class="wrapper-home"><i class="fas fa-trophy"></i></div>
+        <% end %>      
       </div>
       <div class="user-account">  
         <%= link_to edit_user_registration_url, class: "#{'active' if current_page?(edit_user_registration_url)}" do %>

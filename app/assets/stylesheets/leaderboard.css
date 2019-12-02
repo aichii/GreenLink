@@ -59,3 +59,31 @@
   flex-direction: column;
   place-items: center;
 }
+
+@media (max-device-width: 1366px) {
+  .rank-container{
+    width: 45%;
+  }
+}
+
+@media (max-device-width:1024px) {
+  .line-leaderboard-page {
+    display: none;
+  }
+
+  #leaderboard-main {
+    height: 80vh;
+  }
+}
+
+@media (max-device-width: 866px ) {
+  #leaderboard-main {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .rank-container {
+    margin-top: 25px;
+    width: 80%;
+  }
+}
