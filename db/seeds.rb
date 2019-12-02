@@ -275,13 +275,13 @@ Challenge.create(
                 )
 
 # seed 100 users
-# seed 100 users
 response = HTTParty.get('https://randomuser.me/api/?results=100&seed=greenlink&inc=picture')
 
 100.times do |n|
-  user = User.create(email: Faker::Internet.email, password: "password")
+  email = Faker::Internet.email
+  user = User.create(email: email, password: "password")
   fpl_account = FplAccount.create!(
-                  username: Faker::Internet.email,
+                  username: email,
                   password: "password",
                   user: user,
                   zipcode: ["33132", "33024", "33126", "33141", "33139", "33140"].sample
