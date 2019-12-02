@@ -271,8 +271,17 @@ Challenge.create(
                 )
 
 # seed 100 users
+# seed 100 users
+response = HTTParty.get('https://randomuser.me/api/?results=100&seed=greenlink&inc=picture')
+puts "=================================================HELLO"
+puts response["results"][0]["picture"]["thumbnail"]
+puts "=================================================HERE"
+
+
+
 100.times do |n|
   user = User.create(email: "user#{n+1}@email.com", password: "password")
+  user.create_profile(avatar: "#{response['results'][0]['picture']['thumbnail']}")
   fpl_account = FplAccount.create!(
                   username: "user#{n+1}@email.com",
                   password: "password",
