@@ -29,7 +29,7 @@ class FplAccount < ApplicationRecord
       zipcode:            zipcode,
       user_email:         user.email,
       points:             user.points,
-      avatar:             user.profile&.avatar&.attached? ? url_for(user.profile.avatar) : 'https://i.pravatar.cc/300'
+      avatar:             user.profile&.avatar ? url_for(user.profile.avatar) : 'https://icon-library.net/images/default-user-icon/default-user-icon-4.jpg'
     }
   end
 end
