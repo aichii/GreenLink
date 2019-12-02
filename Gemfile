@@ -50,6 +50,7 @@ end
 
 group :production do
   gem 'sidekiq'
+  gem "aws-sdk-s3", require: false
 end
 
 group :test do
