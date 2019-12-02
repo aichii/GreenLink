@@ -1,1 +1,3 @@
-<%= react_component 'Leaderboard', props: {current_user: { id: current_user.id, email: current_user.email, zipcode: current_user.fpl_account.zipcode, points: current_user.points } }, prerender: false %>
+<div class="wrapper-page">
+    <%= react_component 'Leaderboard', props: {current_user: { id: current_user.id, email: current_user.email, zipcode: current_user.fpl_account.zipcode, points: current_user.points } }, prerender: false %>
+</div>
