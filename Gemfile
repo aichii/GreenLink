@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '>= 2.6.0'
 
+gem 'httparty'
 gem 'pry'
 gem 'watir'
 gem 'hirb'
@@ -49,6 +50,7 @@ end
 
 group :production do
   gem 'sidekiq'
+  gem "aws-sdk-s3", require: false
 end
 
 group :test do
